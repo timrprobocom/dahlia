@@ -1,0 +1,120 @@
+<html>
+<head>
+<script>
+
+flowers = [
+    "Dahlia 1", "Dahlia 2", "Dahlia 3", "Dahlia 4",
+    "Dahlia 5", "Dahlia 6", "Dahlia 7", "Dahlis 8",
+    "Dahlia 9", "Dahlia 10", "Dahlia 11", "Dahlia 12",
+    "Dahlia 13", "Dahlia 14", "Dahlia 15", "Dahlis 16"
+];
+
+xbase = 120;
+ybase = 60;
+
+function drawBox( x, y, title, image )
+{
+    ctx.lineWidth = 3;
+    ctx.strokeRect( x-50, y-25, 100, 50 );
+    ctx.fillText( title, x-30, y+10 );
+}
+
+function drawLBracket( x, y, span )
+{
+    ctx.beginPath();
+    ctx.moveTo( x-xbase/2, y-ybase*span );
+    ctx.lineTo( x, y-ybase*span );
+    ctx.lineTo( x, y+ybase*span );
+    ctx.lineTo( x-xbase/2, y+ybase*span );
+    ctx.moveTo( x, y );
+    ctx.lineTo( x+xbase/2, y );
+    ctx.closePath();
+    ctx.stroke();
+}
+
+function drawRBracket( x, y, span )
+{
+    ctx.beginPath();
+    ctx.moveTo( x+xbase/2, y-ybase*span );
+    ctx.lineTo( x,y-ybase*span );
+    ctx.lineTo( x, y+ybase*span );
+    ctx.lineTo( x+xbase/2, y+ybase*span );
+    ctx.moveTo( x, y );
+    ctx.lineTo( x-xbase/2, y );
+    ctx.closePath();
+    ctx.stroke();
+}
+
+function ctrx(n)
+{
+    return 60 + xbase*n;
+}
+
+function ctry(n)
+{
+    return 50 + ybase*n;
+}
+
+window.onload = function() {
+    canvas = document.getElementById('brackets');
+    ctx = canvas.getContext('2d');
+    ctx.font = '12pt Arial';
+
+    // Grid is  100 x 50
+    // Center start 50, 50.
+
+    for( i = 0; i < 8; i++ )
+    {
+        // Left
+        x = ctrx(0);
+        y = ctry(i*2);
+        drawBox( x, y, flowers[i], '' );
+
+        // Right
+        x = ctrx(12);
+        y = ctry(i*2);
+        drawBox( x, y, flowers[i+8], '' );
+    }
+
+    for( i = 0; i < 4; i++ )
+    {
+        y = ctry(1 + i*4);
+        drawLBracket( ctrx(1), y, 1 );
+        drawRBracket( ctrx(11), y, 1 );
+        // Left
+        x = ctrx(2);
+        drawBox( x, y, flowers[i*2], '' );
+
+        // Right
+        x = ctrx(10);
+        drawBox( x, y, flowers[i*2+8], '' );
+    }
+
+    for( i = 0; i < 2; i++ )
+    {
+        y = ctry(3 + i*8);
+
+        drawLBracket( ctrx(3), y, 2 );
+        drawRBracket( ctrx(9), y, 2 );
+        // Left
+        x = ctrx(4);
+        drawBox( x, y, flowers[i*4], '' );
+
+        // Right
+        x = ctrx(8);
+        drawBox( x, y, flowers[i*4+8], '' );
+    }
+
+    x = ctrx(6);
+    y = ctry(7);
+    drawLBracket( ctrx(5), y, 4 );
+    drawRBracket( ctrx(7), y, 4 );
+    drawBox( x, y-ybase/2, flowers[10], '' );
+    drawBox( x, y+ybase/2, flowers[11], '' );
+}
+
+</script>
+<body>
+<canvas id='brackets' width='1600' height='1000'></canvas>
+</body>
+</html>
