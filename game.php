@@ -9,7 +9,7 @@ $t2 =  $db->querySingle("SELECT * FROM dahlias WHERE oid = $game[team2];", true 
 <?php include('header.inc.php'); ?>
 
 <h2>Competition Day <?=$day?></h2>
-<p>Today's <?=$round?> matchup finds us with an adjective battle between two
+<p>Today's <?=$round?> matchup finds us with an {adjective} battle between two
 contenders in the <?=$game['division']?>  Region.
 
 <p>

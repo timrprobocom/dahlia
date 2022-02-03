@@ -21,6 +21,9 @@ Choice" trophy.
 Voting runs from 6 AM until 2 AM.  We are not restricting you to one vote
 per person, but use discretion.  Remember, nothing is at stake here.
 
+<p>
+To vote in today's game, <a href="game.php"> click here </a>.
+
 <h3>Regions</h3>
 <p>
 The four regions essentially map to the four quadrants of the
