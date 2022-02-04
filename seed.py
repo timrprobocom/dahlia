@@ -16,5 +16,7 @@ todo = []
 for row,(r,x) in zip(qry.fetchall(), seed()):
     todo.append( (r, x, row[0]) )
 
+from pprint import pprint
+pprint(todo)
 cur.executemany("UPDATE dahlias SET division=?,seed=? WHERE oid=?", todo)
 db.commit()

@@ -63,8 +63,10 @@ number 7, number 3 plays number 6, and number 4 plays number 5.  We have
 adopted the same system here.
 
 <h3>Photo Credits</h3>
+<img class=left src="150/dahl-logo.png">
 The photos used on this web site came from the ADS New Introductions
 announcement.  The photos are thanks to:
+<p>
 <table width=50% style="margin-left:100px"><tr>
 <td valign=top width=40%>
 Teresa Bergman<br>
