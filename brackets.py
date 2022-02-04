@@ -22,8 +22,8 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
 pdfmetrics.registerFont( TTFont( 'Arial', 'arial.ttf'))
-pdfmetrics.registerFont( TTFont( 'Narrow', 'arialn.ttf'))
-pdfmetrics.registerFont( TTFont( 'ArialBlack', 'ariblk.ttf'))
+#pdfmetrics.registerFont( TTFont( 'Narrow', 'arialn.ttf'))
+#pdfmetrics.registerFont( TTFont( 'ArialBlack', 'ariblk.ttf'))
 
 pagesize = landscape(LETTER)
 
@@ -75,7 +75,7 @@ def bracket( canvas, lr, x, y, teams, region ):
 
     mycols = columns[:] if lr == 'l' else columns[::-1]
     canvas.setFont('Arial',11)
-    canvas.drawString( x+mycols[3], 16*UNITH, region + " Region" )
+    canvas.drawString( x+mycols[3]-36, 16*UNITH, region + " Region" )
 
     # Column 1.
 
