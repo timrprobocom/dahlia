@@ -255,7 +255,8 @@ UPDATE games
 DROP TABLE users;
 
 CREATE TABLE users (
+   username varchar(40),
    name text,
-   username text,
-   email text
+   email text,
+   votes char(31) default '--------------------------------';
 );

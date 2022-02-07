@@ -41,7 +41,7 @@ and their seeds, click these:
 
 <h3>Methodology</h3>
 <p>
-If you're curious abouthow we set this up, here is a summary.
+If you're curious about how we set this up, here is a summary.
 <p>
 We started with the 85 entries in the Americal Dalia Society's 2022 New 
 Introductions list.  It turns out 85 is not a convenient number for a

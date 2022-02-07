@@ -1,8 +1,9 @@
 <?php
 $db = new mysqli('db.timr.probo.com','timrprobocom','web7cal','dahlias');
 $title = "Dahlia Duke-out";
-$start = date();
-$day = 3;
+$start = mktime(6,0,0,2,4,2022);
+$today = time();
+$day = intdiv(($today-$start), 86400);
 
 if( $day <= 16 )
     $round = "First Round";
@@ -17,6 +18,7 @@ else
 
 function display($row, $vote=0)
 {
+    global $day;
     echo <<<STOP
 <table class=bulb>
   <tr>
@@ -37,10 +39,19 @@ STOP;
     if( $vote )
     {
         echo "    <td width=20%>\n";
-        echo "      <button class='bigbtn'>Vote!</button>\n";
+        echo "      <button onClick='return vote($day,$row->oid)' class='bigbtn'>Vote!</button>\n";
         echo "    </td>\n";
     }
     echo " </tr>\n";
     echo "</table>\n";
+}
+
+function is_user($username)
+{
+    global $db;
+    $qry = $db->prepare("SELECT name FROM users WHERE username=?;");
+    $qry->bind_param("s", $username);
+    $qry->execute();
+    return $qry->get_result()->num_rows == 1;
 }
 ?>
