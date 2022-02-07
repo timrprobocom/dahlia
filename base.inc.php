@@ -1,5 +1,5 @@
 <?php
-$db = new SQLite3("dahlias.db");
+$db = new mysqli('db.timr.probo.com','timrprobocom','web7cal','dahlias');
 $title = "Dahlia Duke-out";
 $start = date();
 $day = 3;
@@ -21,17 +21,17 @@ function display($row, $vote=0)
 <table class=bulb>
   <tr>
     <td align=center valign=middle width=25%>
-       <a href='/dahlia/full/$row[image]'>
-         <img src='/dahlia/75/$row[image]'>
+       <a href='/dahlia/full/$row->image'>
+         <img src='/dahlia/75/$row->image'>
        </a>
     </td>
     <td>
-       <span class=name>$row[seed]. $row[name]</span><br><br>
-    Description: $row[pedigree]</br>
-    Orignator: $row[originator]</br>
-    Score: $row[tgscore]<br>
+       <span class=name>$row->seed. $row->name</span><br><br>
+    Description: $row->pedigree</br>
+    Orignator: $row->originator</br>
+    Score: $row->tgscore<br>
 STOP;
-    if( $row['dudley'] )
+    if( $row->dudley )
         echo "Dudley Award\n";
     echo "</td>\n";
     if( $vote )

@@ -13,28 +13,30 @@ list.  Starting March 1, two entries from the list will be pitted against each
 other.  You, the people, will vote on which one you like.  The winners of the
 first round will then be pitted against each other, until we run through the
 Elite Eight, the Final Four, and the Championship round on March 31.
-
+<p>
 The winner will be presented with a prestigious but meaningless "People's
 Choice" trophy.
 
 <p>
-Voting runs from 6 AM until 2 AM.  We are not restricting you to one vote
-per person, but use discretion.  Remember, nothing is at stake here.
+Voting runs from 6 AM until 2 AM.  In order to vote, you must register
+and get a username.  We do that to restrict the voting to one vote 
+per person, because the stakes are so high.  To get your username,
+<a href="register.php">click here</a>,
 
 <p>
 To vote in today's game, <a href="game.php"> click here </a>.
 
 <h3>Regions</h3>
 <p>
-The four regions essentially map to the four quadrants of the
-Portland area, NW, SW, NE, and SE.  To view the list of "teams"
+The four regions are arbitrarily named after the four
+primary compass points, N, W, S, and E.  To view the list of "teams"
 and their seeds, click these:
 
 <ul>
-<li><a href="region.php?region=Beaverton">Beaverton Region</a>
-<li><a href="region.php?region=Tigard">Tigard Region</a>
-<li><a href="region.php?region=Gresham">Gresham Region</a>
-<li><a href="region.php?region=Clackamas">Clackamas Region</a>
+<li><a href="region.php?region=North">North Region</a>
+<li><a href="region.php?region=West">West Region</a>
+<li><a href="region.php?region=South">South Region</a>
+<li><a href="region.php?region=East">East Region</a>
 </ul>
 
 <h3>Methodology</h3>

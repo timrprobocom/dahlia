@@ -1,6 +1,8 @@
 DROP TABLE dahlias;
  CREATE TABLE dahlias (
-   name text, pedigree text,
+   oid integer primary key not null auto_increment,
+   name text, 
+   pedigree text,
    image text,
    originator text,
    distributor text,

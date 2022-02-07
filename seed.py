@@ -1,10 +1,10 @@
-import sqlite3
+import mysql.connector as mysql
 
-db = sqlite3.connect('dahlias.db')
+db = mysql.connect(host='db.timr.probo.com', user='timrprobocom', passwd='web7cal', db='dahlias')
 cur = db.cursor()
-regions = ['Beaverton','Tigard','Gresham','Clackamas']
+regions = ["North","West","South","East"]
 
-qry = cur.execute('SELECT oid FROM dahlias ORDER BY tgscore DESC;');
+cur.execute('SELECT oid FROM dahlias ORDER BY tgscore DESC;')
 
 def seed():
     for x in range(8):
@@ -13,10 +13,10 @@ def seed():
 
 seeder = seed()
 todo = []
-for row,(r,x) in zip(qry.fetchall(), seed()):
+for row,(r,x) in zip(cur.fetchall(), seed()):
     todo.append( (r, x, row[0]) )
 
 from pprint import pprint
 pprint(todo)
-cur.executemany("UPDATE dahlias SET division=?,seed=? WHERE oid=?", todo)
+cur.executemany("UPDATE dahlias SET division=%s,seed=%s WHERE oid=%s", todo)
 db.commit()
