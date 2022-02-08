@@ -1,5 +1,5 @@
 </div>
-<div style="width:100%; position: fixed; bottom: 10px">
+<div style="width:100%; margin-top: 50px">
 <hr>
 <table width=100%><tr>
 <td width=33%>
