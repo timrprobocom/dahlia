@@ -1,6 +1,29 @@
 <?php
 require_once("base.inc.php");
-include('header.inc.php')
+include('header.inc.php');
+
+$game = -1;
+if( $day > 0 )
+{
+    $game = $db->query("SELECT * FROM games WHERE id='$day-1'");
+    $game = $game->fetch_object();
+    $t1 =  $db->query("SELECT * FROM dahlias WHERE oid = $game->team1;");
+    $t1 = $t1->fetch_object();
+    $t2 =  $db->query("SELECT * FROM dahlias WHERE oid = $game->team2;");
+    $t2 = $t2->fetch_object();
+    if( $game->score1 >= $game->score2 )
+    {
+        $winner = $t1;
+        $loser = $t2;
+    }
+    else
+    {
+        $winner = $t2;
+        $loser = $t1;
+    }
+    $wscore = max($game->score1, $game->score2);
+    $lscore = min($game->score1, $game->score2);
+}
 ?>
 <img class=right src="300/dahl-0000.png">
 <h3>Introduction</h3>
@@ -22,6 +45,15 @@ Voting runs from 6 AM until 2 AM.  In order to vote, you must register
 and get a username.  We do that to restrict the voting to one vote 
 per person, because the stakes are so high.  To get your username,
 <a href="register.php">click here</a>,
+
+<?php if( $day > 0 ) { ?>
+<p>
+In yesterday's <?=$game->division?> region
+battle, #<?=$winner->seed?> seed <?=$winner->name?> defeated
+#<?=$loser->seed?> seed <?=$loser->name?> by a score of <?=$wscore?> to
+<?=$lscore?>.  <?=$winner->name?> will be advancing to the next 
+round.
+<?php } ?>
 
 <p>
 To vote in today's game, <a href="game.php"> click here </a>.
@@ -59,7 +91,7 @@ and so on.
 <p>
 The NCAA uses a very specific scheme to decide the first matchups.  They
 want to make sure to give the top seeds as much chance as possible, so they
-don't pit number 1 againsst number 2 right away.  Instead, their first 
+don't pit number 1 against number 2 right away.  Instead, their first 
 round matches the number 1 seed with the number 8 seed,  number 2 plays 
 number 7, number 3 plays number 6, and number 4 plays number 5.  We have
 adopted the same system here.
