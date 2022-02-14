@@ -236,7 +236,7 @@ INSERT INTO games (id, division, winnerto, position) VALUES
     (28, "East",  30, 2),
 
     (29, "Northwest",  31, 1),
-    (30, "SouthEast",  31, 2),
+    (30, "Southeast",  31, 2),
 
     (31, "Final", 32, 1);
 

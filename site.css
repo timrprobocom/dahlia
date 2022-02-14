@@ -43,12 +43,28 @@ div.bulb-image {
 td.one table.bulb {
 }
 
+td.two {
+    vertical-align: top;
+}
+
 td.two table.bulb {
-    margin: 62px 0 62px 0;
+    margin: 75px 0 52px 0;
+}
+
+td.three {
+    vertical-align: top;
 }
 
 td.three table.bulb {
-    margin: 1870px 0 1870px 0;
+    margin: 205px 0 190px 0;
+}
+
+td.four {
+    vertical-align: top;
+}
+
+td.four table.bulb {
+    margin-top: 480px;
 }
 
 .left {
