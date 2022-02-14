@@ -33,8 +33,15 @@ function display($row, $vote=0)
     Orignator: $row->originator</br>
     Score: $row->tgscore<br>
 STOP;
+    $awards = [];
     if( $row->dudley )
-        echo "Dudley Award\n";
+        $awards[] = "Dudley";
+    if( $row->hart )
+        $awards[] = "Hart";
+    if( $row->gulliksen )
+        $awards[] = "Gulliksen";
+    if( !empty($awards) )
+        echo "Awards: " . implode($awards, ", ");
     echo "</td>\n";
     if( $vote )
     {
