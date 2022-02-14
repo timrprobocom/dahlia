@@ -46,6 +46,22 @@ STOP;
     echo "</table>\n";
 }
 
+function dummy()
+{
+    echo <<<STOP
+<table class=bulb>
+  <tr>
+    <td align=center valign=middle width=25%>
+       &nbsp;
+    </td>
+    <td>
+       &nbsp;
+    </td>
+  </tr>
+</table>
+STOP;
+}
+
 function is_user($username)
 {
     global $db;
