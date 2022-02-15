@@ -17,7 +17,7 @@ else if( $day <= 30 )
 else 
     $round = "Championship";
 
-function display($row, $vote=0)
+function display($row, $score=0, $vote=0)
 {
     global $day;
     echo <<<STOP
@@ -29,7 +29,12 @@ function display($row, $vote=0)
        </a>
     </td>
     <td>
-       <span class=name>$row->seed. $row->name</span><br><br>
+       <span class=name>$row->seed. $row->name</span>
+STOP;
+    if( $score )
+        echo "<span class=name style='float: right'>$score</span>";
+    echo <<<STOP
+    <br>
     Description: $row->pedigree</br>
     Orignator: $row->originator</br>
     Score: $row->tgscore<br>

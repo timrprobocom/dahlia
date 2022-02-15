@@ -29,9 +29,14 @@ and get a username.  We do that to restrict the voting to one vote
 per person, because the stakes are so high.  To get your username,
 <a href="register.php">click here</a>,
 
+<p>
+If you have any questions or issues, please <a href="mailto:timr@probo.com">contact
+the webmaster</a>.
+
 <p>Today is day <?=$day?>.
 
 <?php if( $day > 0 ) { ?>
+<h3>Yesterday</h3>
 <p>
 In yesterday's <?=$last->game->division?> region battle,
 #<?=$last->winner->seed?> seed <b><?=$last->winner->name?></b> defeated
@@ -40,6 +45,7 @@ In yesterday's <?=$last->game->division?> region battle,
 <b><?=$last->winner->name?></b> will be advancing to the next round.
 <?php } ?>
 
+<h3>Voting</h3>
 <p>
 To vote in today's game, <a href="game.php"> click here </a>.
 

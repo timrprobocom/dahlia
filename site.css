@@ -45,14 +45,16 @@ td.one table.bulb {
 
 td.two {
     vertical-align: top;
+    padding: 0;
 }
 
 td.two table.bulb {
-    margin: 75px 0 52px 0;
+    margin: 73px 0 50px 0;
 }
 
 td.three {
     vertical-align: top;
+    padding: 0;
 }
 
 td.three table.bulb {
@@ -61,6 +63,7 @@ td.three table.bulb {
 
 td.four {
     vertical-align: top;
+    padding: 0;
 }
 
 td.four table.bulb {

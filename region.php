@@ -25,7 +25,10 @@ else
 <?php foreach( $regions as $rgn ) { ?>
 <li><a href="region.php?region=<?=$rgn?>"><?=$rgn?> Region</a>
 <?php } ?>
+<li><a href="index.php">Back to top</a>
 </ul>
+<p>
+The number at the upper right of each box is the number of votes in that round.
 
 <h2><?=$region?> Region</h2>
 <?php
@@ -36,8 +39,8 @@ if( !$seeds )
     for( $i = 0; $i < 4; $i++ )
     {
         $game = $rows->fetch_object();
-        display( $teams[$game->team1] );
-        display( $teams[$game->team2] );
+        display( $teams[$game->team1], $game->score1 );
+        display( $teams[$game->team2], $game->score2 );
     }
 
     echo "</td><td class='two'>\n";
@@ -45,12 +48,12 @@ if( !$seeds )
     {
         $game = $rows->fetch_object();
         if( $game->team1 > 0 )
-            display( $teams[$game->team1] );
+            display( $teams[$game->team1], $game->score1 );
         else
             dummy();
         echo "&nbsp;";
         if( $game->team2 > 0 )
-            display( $teams[$game->team2] );
+            display( $teams[$game->team2], $game->score2 );
         else
             dummy();
         echo "&nbsp;";
@@ -59,12 +62,12 @@ if( !$seeds )
     echo "</td><td class='three'>\n";
     $game = $rows->fetch_object();
     if( $game->team1 > 0 )
-        display( $teams[$game->team1] );
+        display( $teams[$game->team1], $game->score1 );
     else
         dummy();
         echo "&nbsp;";
     if( $game->team2 > 0 )
-        display( $teams[$game->team2] );
+        display( $teams[$game->team2], $game->score2 );
     else
         dummy();
 

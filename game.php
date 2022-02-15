@@ -82,11 +82,11 @@ Enter your username here:
 Choose your favorite below by clicking the "Vote" button for your choice.
 <br><br><br>
 <table><tr><td width=40%>
-<?php display($t1,1); ?>
+<?php display($t1,0,1); ?>
 </td>
 <td width=20% align=center valign=middle><h2>vs</h2></td>
 <td width=40%>
-<?php display($t2,1); ?>
+<?php display($t2,0,1); ?>
 </td>
 </tr></table>
 </form>
