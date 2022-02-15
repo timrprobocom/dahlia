@@ -10,7 +10,7 @@ day = delta.days
 
 db = mysql.connect(host='db.timr.probo.com', user='timrprobocom', passwd='web7cal', db='dahlias')
 cur = db.cursor(dictionary=True)
-regions = ["North","West","South","East"]
+#regions = ["Northwest","Northeast","Southwest","Southeast"]
 
 # Update all the scores so far.
 

@@ -2,7 +2,7 @@ import mysql.connector as mysql
 
 db = mysql.connect(host='db.timr.probo.com', user='timrprobocom', passwd='web7cal', db='dahlias')
 cur = db.cursor()
-regions = ["North","West","South","East"]
+regions = ["Northwest","Southwest","Northeast","Southeast"]
 
 cur.execute('SELECT oid FROM dahlias ORDER BY tgscore DESC;')
 
@@ -19,4 +19,23 @@ for row,(r,x) in zip(cur.fetchall(), seed()):
 from pprint import pprint
 pprint(todo)
 cur.executemany("UPDATE dahlias SET division=%s,seed=%s WHERE oid=%s", todo)
+
+db.commit()
+
+cur.execute("""\
+UPDATE games
+   SET team1=(
+       SELECT oid FROM dahlias d
+       WHERE d.division = games.division AND d.seed=games.team1
+       );
+""")
+
+cur.execute("""\
+UPDATE games 
+   SET team2=(
+       SELECT oid FROM dahlias d
+       WHERE d.division = games.division AND d.seed=games.team2
+       );
+""")
+
 db.commit()

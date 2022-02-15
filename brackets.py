@@ -1,13 +1,12 @@
 import os
 import sys
-import sqlite3
+import mysql.connector as mysql
 
-db = sqlite3.connect("dahlias.db")
-db.row_factory = sqlite3.Row
+db = mysql.connect(host='db.timr.probo.com', user='timrprobocom', passwd='web7cal', db='dahlias')
 
-cursor = db.cursor()
-qry = cursor.execute("SELECT * FROM dahlias WHERE division IS NOT NULL ORDER BY division, seed;")
-teams = qry.fetchall()
+cursor = db.cursor(dictionary=True)
+cursor.execute("SELECT * FROM dahlias WHERE division IS NOT NULL ORDER BY division, seed;")
+teams = cursor.fetchall()
 
 # Sort them by pairings.
 mapping = [ -1, 0, 2, 4, 6, 7, 5, 3, 1 ]
@@ -136,8 +135,8 @@ canvas.setPageCompression( 0 )
 canvas.setLineJoin(1)
 canvas.setLineCap(1)
 
-bracket( canvas, 'l', 36, 36, teams, "North" )
-bracket( canvas, 'r', pagesize[0]/2-40, 36, teams, "West" )
+bracket( canvas, 'l', 36, 36, teams, "Northwest" )
+bracket( canvas, 'r', pagesize[0]/2-40, 36, teams, "Northeast" )
 canvas.saveState()
 canvas.translate( 36+columns[6], 36+UNITH*6 )
 drawteam( canvas, None )
@@ -146,8 +145,8 @@ drawteam( canvas, None )
 canvas.restoreState()
 canvas.showPage()
 
-bracket( canvas, 'l', 36, 36, teams, "South" )
-bracket( canvas, 'r', pagesize[0]/2-40, 36, teams, "East" )
+bracket( canvas, 'l', 36, 36, teams, "Southwest" )
+bracket( canvas, 'r', pagesize[0]/2-40, 36, teams, "Southeast" )
 canvas.saveState()
 canvas.translate( 36+columns[6], 36+UNITH*6 )
 drawteam( canvas, None )

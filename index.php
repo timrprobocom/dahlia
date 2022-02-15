@@ -3,27 +3,10 @@ require_once("base.inc.php");
 include('header.inc.php');
 
 $game = -1;
+if( $day > 1 )
+    $last = getgame($day-1);
 if( $day > 0 )
-{
-    $game = $db->query("SELECT * FROM games WHERE id='$day-1'");
-    $game = $game->fetch_object();
-    $t1 =  $db->query("SELECT * FROM dahlias WHERE oid = $game->team1;");
-    $t1 = $t1->fetch_object();
-    $t2 =  $db->query("SELECT * FROM dahlias WHERE oid = $game->team2;");
-    $t2 = $t2->fetch_object();
-    if( $game->score1 >= $game->score2 )
-    {
-        $winner = $t1;
-        $loser = $t2;
-    }
-    else
-    {
-        $winner = $t2;
-        $loser = $t1;
-    }
-    $wscore = max($game->score1, $game->score2);
-    $lscore = min($game->score1, $game->score2);
-}
+    $today = getgame($day);
 ?>
 <img class=right src="300/dahl-0000.png">
 <h3>Introduction</h3>
@@ -46,13 +29,15 @@ and get a username.  We do that to restrict the voting to one vote
 per person, because the stakes are so high.  To get your username,
 <a href="register.php">click here</a>,
 
+<p>Today is day <?=$day?>.
+
 <?php if( $day > 0 ) { ?>
 <p>
-In yesterday's <?=$game->division?> region
-battle, #<?=$winner->seed?> seed <?=$winner->name?> defeated
-#<?=$loser->seed?> seed <?=$loser->name?> by a score of <?=$wscore?> to
-<?=$lscore?>.  <?=$winner->name?> will be advancing to the next 
-round.
+In yesterday's <?=$last->game->division?> region battle,
+#<?=$last->winner->seed?> seed <b><?=$last->winner->name?></b> defeated
+#<?=$last->loser->seed?> seed <b><?=$last->loser->name?></b> by a score of 
+<?=$last->wscore?> to <?=$last->lscore?>.  
+<b><?=$last->winner->name?></b> will be advancing to the next round.
 <?php } ?>
 
 <p>
@@ -60,15 +45,14 @@ To vote in today's game, <a href="game.php"> click here </a>.
 
 <h3>Regions</h3>
 <p>
-The four regions are arbitrarily named after the four
-primary compass points, N, W, S, and E.  To view the list of "teams"
+The four regions are arbitrarily named after the four compass
+quadrants, NW, NE, SW, and SE.  To view the list of "teams"
 and their seeds, click these:
 
 <ul>
-<li><a href="region.php?region=North">North Region</a>
-<li><a href="region.php?region=West">West Region</a>
-<li><a href="region.php?region=South">South Region</a>
-<li><a href="region.php?region=East">East Region</a>
+<?php foreach( $regions as $region ) { ?>
+<li><a href="region.php?region=<?=$region?>"><?=$region?> Region</a>
+<?php } ?>
 </ul>
 
 <h3>Methodology</h3>

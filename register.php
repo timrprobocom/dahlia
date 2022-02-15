@@ -17,7 +17,6 @@ if( array_key_exists('button',$_REQUEST) )
             $_REQUEST['name'],
             $_REQUEST['email']);
         $qry->execute();
-        alert("Your username is now registered.");
         header('Location: /dahlia/index.php');
         exit();
     }
@@ -53,5 +52,7 @@ it easily.
     <td><input type=submit name=button></td></tr>
 </table>
 </form>
+
+<a href="/dahlia/">Back to the top</a>
 
 <?php include('footer.inc.php');

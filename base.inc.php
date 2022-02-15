@@ -4,6 +4,7 @@ $title = "Dahlia Duke-out";
 $start = mktime(6,0,0,2,4,2022);
 $today = time();
 $day = intdiv(($today-$start), 86400);
+$regions = [ "Northwest", "Southwest", "Northeast", "Southeast" ];
 
 if( $day <= 16 )
     $round = "First Round";
@@ -76,5 +77,35 @@ function is_user($username)
     $qry->bind_param("s", $username);
     $qry->execute();
     return $qry->get_result()->num_rows == 1;
+}
+
+function getgame($day)
+{
+    global $db;
+    $info = new stdClass();
+    $info->day = $day;
+    echo "day $day\n";
+    $game = $db->query("SELECT * FROM games WHERE id=$day");
+    $game = $game->fetch_object();
+    $info->game = $game;
+    if( $game->team1 == 0 )
+        return FALSE;
+    $t1 =  $db->query("SELECT * FROM dahlias WHERE oid = $game->team1;");
+    $t1 = $t1->fetch_object();
+    $t2 =  $db->query("SELECT * FROM dahlias WHERE oid = $game->team2;");
+    $t2 = $t2->fetch_object();
+    if( $game->score1 >= $game->score2 )
+    {
+        $info->winner = $t1;
+        $info->loser = $t2;
+    }
+    else
+    {
+        $info->winner = $t2;
+        $info->loser = $t1;
+    }
+    $info->wscore = max($game->score1, $game->score2);
+    $info->lscore = min($game->score1, $game->score2);
+    return $info;
 }
 ?>

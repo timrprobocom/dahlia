@@ -2,19 +2,16 @@
 require_once('base.inc.php');
 include("header.inc.php");
 $region = $_GET["region"];
-$brackets = array_key_exists("brackets",$_GET);
+$seeds = array_key_exists("seeds",$_GET);
 $rows = $db->query("SELECT * FROM dahlias WHERE division='$region' ORDER BY seed;");
 
-if( $brackets )
+if( !$seeds )
 {
     $teams = array();
     while( $row = $rows->fetch_object() )
         $teams[$row->oid] = $row;
     
-    if( $region == 'North' || $region == 'Wesst' )
-        $also = 'Northwest';
-    else
-        $also = 'Southeast';
+    $also = substr($region,0,5);
     $rows = $db->query("SELECT * FROM games WHERE division IN ('$region','$also') ORDER BY id;");
 }
 else
@@ -25,17 +22,14 @@ else
 }
 ?>
 <ul>
-<li><a href="region.php?region=North">North Region</a>
-<li><a href="region.php?region=West">West Region</a>
-<li><a href="region.php?region=South">South Region</a>
-<li><a href="region.php?region=East">East Region</a>
+<?php foreach( $regions as $rgn ) { ?>
+<li><a href="region.php?region=<?=$rgn?>"><?=$rgn?> Region</a>
+<?php } ?>
 </ul>
-
-<a href="region.php?region=<?=$region?>&brackets=1">With brackets</a>
 
 <h2><?=$region?> Region</h2>
 <?php
-if( $brackets )
+if( !$seeds )
 {
     echo "<table valign=top><tr>\n";
     echo "<td class='one'>\n";
