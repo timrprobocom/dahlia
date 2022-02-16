@@ -8,6 +8,20 @@ $t1 = $t1->fetch_object();
 $t2 =  $db->query("SELECT * FROM dahlias WHERE oid = $game->team2;");
 $t2 = $t2->fetch_object();
 
+$adjectives = [
+     "an epic",
+     "an exciting",
+     "a breathtaking",
+     "an edge-of-your-seat",
+     "a polarizing",
+     "a record-breaking",
+     "a classic",
+     "a spirited",
+     "a high-stakes",
+];
+
+$adjective = $adjectives[array_rand($adjectives)];
+
 function process()
 {
     global $db;
@@ -65,7 +79,7 @@ function vote( day, team )
 </script>
 
 <h2>Competition Day <?=$day?></h2>
-<p>Today's <?=$round?> matchup finds us with an {adjective} battle between two
+<p>Today's <?=$round?> matchup finds us with <?=$adjective?> battle between two
 contenders in the <?=$game->division?>  Region.
 
 <p>
