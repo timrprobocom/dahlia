@@ -112,6 +112,6 @@ John Spangenberg<br>
 Linda Taylor</br>
 Cammi Waggoner
 </td></tr></table>
-</div>
+<br><br>
 
 <?php include('footer.inc.php');

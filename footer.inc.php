@@ -1,6 +1,6 @@
 </div>
-<div style="width:100%; margin-top: 50px">
-<hr>
+<div id=footer>
+<hr style='margin:0'>
 <table width=100%><tr>
 <td width=33%>
 Descriptions and photos used with permission of the American Dahlia Society

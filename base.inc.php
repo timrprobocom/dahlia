@@ -89,7 +89,6 @@ function getgame($day)
     global $db;
     $info = new stdClass();
     $info->day = $day;
-    echo "day $day\n";
     $game = $db->query("SELECT * FROM games WHERE id=$day");
     $game = $game->fetch_object();
     $info->game = $game;
