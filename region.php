@@ -3,7 +3,7 @@ require_once('base.inc.php');
 include("header.inc.php");
 $region = $_GET["region"];
 $seeds = array_key_exists("seeds",$_GET);
-$rows = $db->query("SELECT * FROM dahlias WHERE division='$region' ORDER BY seed;");
+$rows = $db->query("SELECT * FROM dahlias ORDER BY seed;");
 
 if( !$seeds )
 {
@@ -11,8 +11,14 @@ if( !$seeds )
     while( $row = $rows->fetch_object() )
         $teams[$row->oid] = $row;
     
-    $also = substr($region,0,5);
-    $rows = $db->query("SELECT * FROM games WHERE division IN ('$region','$also') ORDER BY id;");
+    if( $region == 'final4' )
+    {
+        $rows = $db->query("SELECT * FROM games WHERE id >= 25 ORDER BY id;");
+    }
+    {
+        $also = substr($region,0,5);
+        $rows = $db->query("SELECT * FROM games WHERE division IN ('$region','$also') ORDER BY id;");
+    }
 }
 else
 {
@@ -25,24 +31,30 @@ else
 <?php foreach( $regions as $rgn ) { ?>
 <li><a href="region.php?region=<?=$rgn?>"><?=$rgn?> Region</a>
 <?php } ?>
+<li><a href="region.php?region=final4">Final Four</a>
 <li><a href="index.php">Back to top</a>
 </ul>
 <p>
 The number at the upper right of each box is the number of votes in that round.
 
-<h2><?=$region?> Region</h2>
 <?php
+if( $region == "final4" )
+    echo "<h2>Final Four</h2?>\n";
+else
+    echo "<h2>$region Region</h2>\n";
+
 if( !$seeds )
 {
     echo "<table valign=top><tr>\n";
-    echo "<td class='one'>\n";
-    for( $i = 0; $i < 4; $i++ )
-    {
-        $game = $rows->fetch_object();
-        display( $teams[$game->team1], $game->score1 );
-        display( $teams[$game->team2], $game->score2 );
+    if( $region != "final4" ) {
+        echo "<td class='one'>\n";
+        for( $i = 0; $i < 4; $i++ )
+        {
+            $game = $rows->fetch_object();
+            display( $teams[$game->team1], $game->score1 );
+            display( $teams[$game->team2], $game->score2 );
+        }
     }
-
     echo "</td><td class='two'>\n";
     for( $i = 0; $i < 2; $i++ )
     {

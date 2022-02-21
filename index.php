@@ -59,6 +59,7 @@ and their seeds, click these:
 <?php foreach( $regions as $region ) { ?>
 <li><a href="region.php?region=<?=$region?>"><?=$region?> Region</a>
 <?php } ?>
+<li><a href="region.php?region=final4">Final Four</a>
 </ul>
 
 <h3>Methodology</h3>
