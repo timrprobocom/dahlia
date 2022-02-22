@@ -13,7 +13,7 @@ if( !$seeds )
     
     if( $region == 'final4' )
     {
-        $rows = $db->query("SELECT * FROM games WHERE id >= 25 ORDER BY id;");
+        $rows = $db->query("SELECT * FROM games WHERE id >= 29 ORDER BY id;");
     }
     {
         $also = substr($region,0,5);
@@ -84,15 +84,12 @@ if( !$seeds )
         dummy();
 
     echo "</td><td class='four'>\n";
-    $game = $rows->fetch_object();
-    if( $region == 'North' || $region == 'South' )
-        $want = $teams[$game->team1];
-    else
-        $want = $teams[$game->team2];
-    if( $want > 0 )
-        display( $teams[$want] );
-    else
+    if( $game->score1 == 0 )
         dummy();
+    else if( $game->score1 >= $game->score2 )
+        display( $teams[$game->team1] );
+    else
+        display( $teams[$game->team2] );
     echo "</td></tr></table>\n";
 }
 else 
