@@ -33,21 +33,40 @@ per person, because the stakes are so high.  To get your username,
 If you have any questions or issues, please <a href="mailto:timr@probo.com">contact
 the webmaster</a>.
 
-<p>Today is day <?=$day?>.
 
-<?php if( $day > 0 ) { ?>
+<?php if( $day <= 0 ) {
+    echo "<h3>Voting</h3>\n";
+    echo "<p>Voting will begin on " . date('l, F j', $start) . ".\n";
+} else { 
+
+    if( $day >= 31 ) {
+        $last = getgame(31); 
+        echo "<p>The competition is all over for this year.  Thanks for playing!\n";
+    }
+    else
+        echo "<p>Today is day $day.\n";
+
+    if( $round != "Championship" ) {
+        $round .= " " . $last->game->division . " region";
+    }
+?>
+
 <h3>Yesterday</h3>
 <p>
-In yesterday's <?=$last->game->division?> region battle,
+In yesterday's <?=$round ?> battle,
 #<?=$last->winner->seed?> seed <b><?=$last->winner->name?></b> defeated
 #<?=$last->loser->seed?> seed <b><?=$last->loser->name?></b> by a score of 
 <?=$last->wscore?> to <?=$last->lscore?>.  
+<?php if( $day != 31 ) { ?>
 <b><?=$last->winner->name?></b> will be advancing to the next round.
-<?php } ?>
 
 <h3>Voting</h3>
 <p>
 To vote in today's game, <a href="game.php"> click here </a>.
+
+<?php
+    }
+} ?>
 
 <h3>Regions</h3>
 <p>

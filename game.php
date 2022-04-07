@@ -1,6 +1,8 @@
 <?php
 require_once('base.inc.php');
 
+if( $day < 31 ) {
+
 $game = $db->query("SELECT * FROM games WHERE id='$day'");
 $game = $game->fetch_object();
 $t1 =  $db->query("SELECT * FROM dahlias WHERE oid = $game->team1;");
@@ -62,8 +64,16 @@ function process()
 
 if( array_key_exists( "team", $_REQUEST ) )
     $err = process();
+}
 
 include('header.inc.php' );
+
+if( $day >= 31 )
+{
+    echo "<h2>All Done!</h2>\n";
+    echo "<p>The competition is all over.  Thanks for playing!\n";
+    exit();
+}
 ?>
 <script>
 function vote( day, team )
@@ -84,8 +94,13 @@ contenders in the <?=$game->division?>  Region.
 
 <p>
 Number <?=$t1->seed?> seed <?=$t1->name?> goes up against contender
-number <?=$t2->seed?> seed <?=$t2->name?>.  You may click on the bloom image
-to see a larger picture of the flower.
+number <?=$t2->seed?> seed <?=$t2->name?>.
+<p>
+<?=$t1->prose?>
+<p>
+<?=$t2->prose?>
+
+<p>You may click on the bloom image to see a larger picture of the flower.
 <p>
 Enter your username here:
 <form method=POST action="/dahlia/game.php">
