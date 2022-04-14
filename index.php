@@ -12,13 +12,13 @@ if( $day > 0 )
 <h3>Introduction</h3>
 
 <p>
-If the NCAA can have March Madness, then the American Dahlia Society can have
+If the NCAA can have March Madness, then the Portland Dahlia Society can have
 a "Dahlia Duke-Out".  This is a contest run strictly for fun to decide a
 "People's Choice" winner from the 32 top entries in the 2022 New Introductions
-list.  Starting March 1, two entries from the list will be pitted against each
+list.  Starting April 18 , two entries from the list will be pitted against each
 other.  You, the people, will vote on which one you like.  The winners of the
 first round will then be pitted against each other, until we run through the
-Elite Eight, the Final Four, and the Championship round on March 31.
+Elite Eight, the Final Four, and the Championship round on May 18.
 <p>
 The winner will be presented with a prestigious but meaningless "People's
 Choice" trophy.
