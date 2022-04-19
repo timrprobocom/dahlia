@@ -9,21 +9,38 @@ if( array_key_exists('button',$_REQUEST) )
 {
     // Make sure the username is unique.
 
-    if( !is_user($_REQUEST['username']) )
+    if( is_user($_REQUEST['username']) )
     {
-        $qry = $db->prepare("INSERT INTO users (username,name,email) VALUES (?,?,?);");
-        $qry->bind_param("sss", 
-            $_REQUEST['username'],
-            $_REQUEST['name'],
-            $_REQUEST['email']);
-        $qry->execute();
-        header('Location: /dahlia/index.php');
-        exit();
+        $err = "That username is already taken.";
+        $name = $_REQUEST['name'];
+        $email = $_REQUEST['email'] ;
+        return;
     }
+    $qry = $db->prepare("INSERT INTO users (username,name,email) VALUES (?,?,?);");
+    $qry->bind_param("sss", 
+        $_REQUEST['username'],
+        $_REQUEST['name'],
+        $_REQUEST['email']);
+    $qry->execute();
 
-    $err = "That username is already taken.";
-    $name = $_REQUEST['name'];
-    $email = $_REQUEST['email'] ;
+    # Send acknowledgement.
+
+    $subject = "Dahlia Duke-Out Registration";
+    $headers = 
+        "From: Dahlia Duke-Out <timr@probo.com>\r\n" .
+        "Content-Type: text/plain\r\n";
+
+    $message = <<<END
+Thanks for registering for the Dahlia Duke-Out!  Your sign-up is complete, with username "$_REQUEST[username]".
+
+You may vote every day starting at 6:00 AM.
+END;
+
+    $to = "$_REQUEST[name] <$_REQUEST[email]>";
+    mail( $to, $subject, $message, $headers );
+
+    header('Location: /dahlia/index.php');
+    exit();
 }
 
 include('header.inc.php');
@@ -49,7 +66,7 @@ it easily.
 <tr><th>Username:</th>
     <td><input type=text name=username></td></tr>
 <tr><th></th>
-    <td><input type=submit name=button></td></tr>
+    <td><input type=submit name=button value="Submit"></td></tr>
 </table>
 </form>
 

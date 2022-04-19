@@ -46,7 +46,8 @@ function process()
     $qry->bind_param( "s", $_REQUEST['username'] );
     $qry->execute();
     $user = $qry->get_result()->fetch_object();
-    if( $user->votes[$day] != '-' )
+
+    if( $user->votes[$day-1] != '-' )
         return "Sorry, you have already voted today.";
 
     $votes = $user->votes;

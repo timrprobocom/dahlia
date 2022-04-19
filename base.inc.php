@@ -1,9 +1,12 @@
 <?php
 $db = new mysqli('db.timr.probo.com','timrprobocom','web7cal','dahlias');
 $title = "Dahlia Duke-out";
-$start = mktime(6,0,0,4,18,2022);
+$start = mktime(6,0,0,4,20,2022);
 $today = time();
-$day = intdiv(($today-$start), 86400)+1;
+if( $today < $start )
+    $day = 0;
+else
+    $day = intdiv(($today-$start), 86400)+1;
 $regions = [ "Northwest", "Southwest", "Northeast", "Southeast" ];
 
 if( $day <= 16 )

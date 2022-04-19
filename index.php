@@ -14,7 +14,8 @@ if( $day > 0 )
 <p>
 If the NCAA can have March Madness, then the Portland Dahlia Society can have
 a "Dahlia Duke-Out".  This is a contest run strictly for fun to decide a
-"People's Choice" winner from the 32 top entries in the 2022 New Introductions
+"People's Choice" winner from the 32 entries with the highest test garden scores
+in the 2022 New Introductions
 list.  Starting April 18 , two entries from the list will be pitted against each
 other.  You, the people, will vote on which one you like.  The winners of the
 first round will then be pitted against each other, until we run through the
@@ -26,31 +27,18 @@ Choice" trophy.
 <p>
 Voting runs from 6 AM until 2 AM.  In order to vote, you must register
 and get a username.  We do that to restrict the voting to one vote 
-per person, because the stakes are so high.  To get your username,
-<a href="register.php">click here</a>,
+per person, because the stakes are so high.
 
 <p>
 If you have any questions or issues, please <a href="mailto:timr@probo.com">contact
 the webmaster</a>.
 
+<h3>Registration</h3>
+To register your chosen username, which is the "ticket" to being able to vote, please
+<a href="register.php">click here</a>,
 
-<?php if( $day <= 0 ) {
-    echo "<h3>Voting</h3>\n";
-    echo "<p>Voting will begin on " . date('l, F j', $start) . ".\n";
-} else { 
 
-    if( $day >= 31 ) {
-        $last = getgame(31); 
-        echo "<p>The competition is all over for this year.  Thanks for playing!\n";
-    }
-    else
-        echo "<p>Today is day $day.\n";
-
-    if( $round != "Championship" ) {
-        $round .= " " . $last->game->division . " region";
-    }
-?>
-
+<?php if( $day > 1 && $day <= 31 ) { ?>
 <h3>Yesterday</h3>
 <p>
 In yesterday's <?=$round ?> battle,
@@ -59,14 +47,26 @@ In yesterday's <?=$round ?> battle,
 <?=$last->wscore?> to <?=$last->lscore?>.  
 <?php if( $day != 31 ) { ?>
 <b><?=$last->winner->name?></b> will be advancing to the next round.
+<?php 
+    } 
+} ?>
 
 <h3>Voting</h3>
-<p>
-To vote in today's game, <a href="game.php"> click here </a>.
-
-<?php
+<?php if( $day < 1 ) {
+    echo "<p>Voting will begin on " . date('l, F j', $start) . ".\n";
+} else if( $day >= 31 ) {
+    $last = getgame(31); 
+    echo "<p>The competition is all over for this year.  Thanks for playing!\n";
+}
+else
+{
+    if( $round != "Championship" ) {
+        $round .= " " . $last->game->division . " region";
     }
-} ?>
+    echo "<p>Today is day $day.\n";
+    echo "<p>To vote in today's game, <a href='game.php'> click here </a>.\n";
+}
+?>
 
 <h3>Regions</h3>
 <p>
