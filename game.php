@@ -24,6 +24,10 @@ $adjectives = [
 
 $adjective = $adjectives[array_rand($adjectives)];
 
+$user = "";
+if( array_key_exists('un', $_GET) )
+    $user = $_GET['un'];
+
 function process()
 {
     global $db;
@@ -87,6 +91,19 @@ function vote( day, team )
     form.submit();
     return false;
 }
+
+// Ignore the enter key.
+
+window.addEventListener('keydown',function(e){
+    if( e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13)
+    {
+        if( e.target.nodeName=='INPUT' )
+        {
+            e.preventDefault();
+            return false;
+        }
+    }
+},true);
 </script>
 
 <h2>Competition Day <?=$day?></h2>
@@ -105,7 +122,7 @@ number <?=$t2->seed?> seed <?=$t2->name?>.
 <p>
 Enter your username here:
 <form method=POST action="/dahlia/game.php">
-<input type=text name='username'>
+<input type=text name='username' value='<?=$user?>'>
 <p>
 <span style='color: red'><?=$err?></span>
 <p>

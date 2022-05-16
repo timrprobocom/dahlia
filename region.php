@@ -15,6 +15,7 @@ if( !$seeds )
     {
         $rows = $db->query("SELECT * FROM games WHERE id >= 29 ORDER BY id;");
     }
+    else
     {
         $also = substr($region,0,5);
         $rows = $db->query("SELECT * FROM games WHERE division IN ('$region','$also') ORDER BY id;");

@@ -1,8 +1,10 @@
+#! /usr/bin/python3
+
 import mysql.connector as mysql
 import time
 import datetime
 
-start = datetime.datetime( 2022, 2, 4, 2, 0, 0 )
+start = datetime.datetime( 2022, 4, 20, 6, 0, 0 )
 today = datetime.datetime.today()
 delta = today - start
 day = delta.days
@@ -28,5 +30,7 @@ for i in range(day):
 for w,p,t in updates:
     posn = f"team{p}"
     if rows[w-1][posn] != t:
-        cur.execute(f"UPDATE games SET {posn}={t} WHERE id={w-1}")
+        print(f"UPDATE games SET {posn}={t} WHERE id={w};")
+        cur.execute(f"UPDATE games SET {posn}={t} WHERE id={w};")
+db.commit();
 

@@ -1,7 +1,17 @@
 <?php
 require_once('base.inc.php');
 
-$qry = $db->query("SELECT name,email FROM users;" );
+$special = '';
+if( $day > 31 )
+    exit;
+else if( $day == 25 )
+    $special = "Today starts the Elite Eight round -- we're getting closer to the finish!\n\n";
+else if( $day == 29 )
+    $special = "We've now entered the Final Four.  There's a menu item on the main page to see the Final Four brackets.\n\n";
+else if( $day == 31 )
+    $special = "This is it -- the big championship matchup!\n\n";
+
+$qry = $db->query("SELECT * FROM users;" );
 $subject = "Dahlia Duke-Out Reminder";
 $headers = 
     "From: Dahlia Duke-Out <timr@probo.com>\r\n" .
@@ -11,14 +21,15 @@ $message = <<<END
 Remember to vote in the Dahlia Duke-Out!  Today is day number $day,
 and it promises to be another exciting battle.
 
-Go to http://timr.4roberts.us/dahlia to get the link for today's vote.
+$special
+Go to http://timr.4roberts.us/dahlia/game.php?un=XXXXX to vote on
+today's contest.
 END;
 
 while( $row = $qry->fetch_object() )
 {
-    if( substr($row->name,0,3) != "Tim" )
-        continue;
     $to = "$row->name <$row->email>";
-    mail( $to, $subject, $message, $headers );
+    $m1 = str_replace( "XXXXX", $row->username, $message );
+    mail( $to, $subject, $m1, $headers );
 }
 ?>
