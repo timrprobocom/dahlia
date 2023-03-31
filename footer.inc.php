@@ -6,7 +6,7 @@
 Descriptions and photos used with permission of the American Dahlia Society
 </td>
 <td width=33% align=center>
-Copyright &copy; 2022, Providenza &amp; Boekelheide, Inc.
+Copyright &copy; 2023, Providenza &amp; Boekelheide, Inc.
 </td>
 <td width=33%>
 </td>

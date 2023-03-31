@@ -1,7 +1,7 @@
 <?php
 $db = new mysqli('db.timr.probo.com','timrprobocom','web7cal','dahlias');
 $title = "Dahlia Duke-out";
-$start = mktime(6,0,0,4,20,2022);
+$start = mktime(6,0,0,4,20,2023);
 $today = time();
 if( $today < $start )
     $day = 0;
@@ -50,7 +50,7 @@ STOP;
     if( $row->gulliksen )
         $awards[] = "Gulliksen";
     if( !empty($awards) )
-        echo "Awards: " . implode($awards, ", ");
+        echo "Awards: " . implode(", ", $awards);
     echo "</td>\n";
     if( $vote )
     {

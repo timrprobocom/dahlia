@@ -15,11 +15,11 @@ if( $day > 0 )
 If the NCAA can have March Madness, then the Portland Dahlia Society can have
 a "Dahlia Duke-Out".  This is a contest run strictly for fun to decide a
 "People's Choice" winner from the 32 entries with the highest test garden scores
-in the 2022 New Introductions
+in the 2023 New Introductions
 list.  Starting April 18 , two entries from the list will be pitted against each
 other.  You, the people, will vote on which one you like.  The winners of the
 first round will then be pitted against each other, until we run through the
-Elite Eight, the Final Four, and the Championship round on May 18.
+Elite Eight, the Final Four, and the Championship round on May 20.
 <p>
 The winner will be presented with a prestigious but meaningless "People's
 Choice" trophy.
@@ -54,7 +54,7 @@ In yesterday's <?=$round ?> battle,
 <h3>Voting</h3>
 <?php if( $day < 1 ) {
     echo "<p>Voting will begin on " . date('l, F j', $start) . ".\n";
-} else if( $day >= 31 ) {
+} else if( $day > 31 ) {
     $last = getgame(31); 
     echo "<p>The competition is all over for this year.  Thanks for playing!\n";
 }
@@ -85,8 +85,8 @@ and their seeds, click these:
 <p>
 If you're curious about how we set this up, here is a summary.
 <p>
-We started with the 85 entries in the Americal Dalia Society's 2022 New 
-Introductions list.  It turns out 85 is not a convenient number for a
+We started with the 57 entries in the Americal Dalia Society's 2023 New 
+Introductions list.  57 turns out 56 is not a convenient number for a
 bracket scheme, without having some "wild card" games.  In addition, we
 didn't want this nonsense to last more than a month.  If you have N teams in
 a single-elimination tournament, you need to have N-1 games to decide a winner.
@@ -113,24 +113,27 @@ announcement.  The photos are thanks to:
 <p>
 <table width=50% style="margin-left:100px"><tr>
 <td valign=top width=40%>
+Kristine Albrecht<br>
 Teresa Bergman<br>
-Claudia Biggs<br>
-Michael Burns<br>
+Paul Bloomquist<br>
+Steve and Sandy Boley<br>
 Tony Evangelista<br>
-Brad Freeman<br>
-Rich Gibson<br>
-Debbie Hatt<br>
-Ted Kennedy<br>
-Eugene Kenyan
-</td><td valign=top>
+Don Kasinic<br>
+Eugene Kenyan<br>
 Wayne Lobaugh<br>
+Allen Manuel<br>
+Paul McKittrick<br>
+</td><td valign=top>
+Mike Parrish<br>
 Dick Parshall<br>
-Heather Ramsay<br>
-Bob Romano<br>
+Mike and Heather Ramsay<br>
+Jerry Schoenauer<br>
 Bob Schroeder<br>
-John Spangenberg<br>
 Linda Taylor</br>
-Cammi Waggoner
+Cammi Waggoner<br>
+Colin Walker<br>
+Iris Wallace<br>
+Marilyn Walton<br>
 </td></tr></table>
 <br><br>
 

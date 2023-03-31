@@ -1,7 +1,7 @@
 <?php
 require_once('base.inc.php');
 
-if( $day < 31 ) {
+if( $day <= 31 ) {
 
 $game = $db->query("SELECT * FROM games WHERE id='$day'");
 $game = $game->fetch_object();
@@ -73,7 +73,7 @@ if( array_key_exists( "team", $_REQUEST ) )
 
 include('header.inc.php' );
 
-if( $day >= 31 )
+if( $day > 31 )
 {
     echo "<h2>All Done!</h2>\n";
     echo "<p>The competition is all over.  Thanks for playing!\n";

@@ -5,11 +5,11 @@ $special = '';
 if( $day > 31 )
     exit;
 else if( $day == 25 )
-    $special = "Today starts the Elite Eight round -- we're getting closer to the finish!\n\n";
+    $special = "Today starts the Elite Eight round -- we're getting closer to the finish!\n";
 else if( $day == 29 )
-    $special = "We've now entered the Final Four.  There's a menu item on the main page to see the Final Four brackets.\n\n";
+    $special = "We've now entered the Final Four.  There's a menu item on the main page to see the Final Four brackets.\n";
 else if( $day == 31 )
-    $special = "This is it -- the big championship matchup!\n\n";
+    $special = "This is it -- the big championship matchup!\n";
 
 $qry = $db->query("SELECT * FROM users;" );
 $subject = "Dahlia Duke-Out Reminder";
