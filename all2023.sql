@@ -1,0 +1,131 @@
+DROP TABLE dahlias;
+
+CREATE TABLE dahlias (
+   oid integer primary key not null auto_increment,
+   name text, 
+   pedigree text,
+   image text,
+   originator text,
+   distributor text,
+   tgscore real,
+   benchscore real,
+   dudley boolean default 0,
+   hart boolean default 0,
+   gulliksen boolean default 0,
+   division text,
+   seed integer default 0,
+   prose text COLLATE utf8mb4_general_ci
+);
+
+INSERT INTO dahlias (
+   image, name, pedigree, originator, distributor,
+   tgscore, benchscore, dudley, hart, gulliksen ) VALUES
+
+('dahl-0000.png','Grandpa''s Gift','A-ID-V Y/R 1114','Nicholas Gitts','Swan Island Dahlias',87.145,0,0,1,0),
+('dahl-0001.png','Allen''s Diablo','B-SC-R 2206','Allen Manuel','Cowlitz River Dahlias',87.15,0,0,1,0),
+('dahl-0002.png','Kimberly','B-LC-PR 2509','Don Kasanic','',0,89.089,1,0,0),
+('dahl-0003.png','Ruthli','BB-LC-LB OR/Y 3210','Iris Wallace','',0,89.083,1,0,0),
+('dahl-0004.png','Connie Dahuahua','BB-C-Y 3302','Connie Young Davis','',90.02,0,0,1,0),
+('dahl-0005.png','Allen''s Alley Cat','M-FD-O 4003','Allen Manuel','Cowlitz River Dahlias',88.487,85.96,0,1,0),
+('dahl-0006.png','Newaukum Fun','M-FD-V L/PK 4014','Wayne Lobaugh','Lobaugh''s Dahlias',0,86.556,1,0,0),
+('dahl-0007.png','Clearview Pataha','St-Bronce 7011','Dick Parshall','Lobaugh''s Dahlias',87.0375,0,0,1,0),
+('dahl-0008.png','Hollyhill Letitia','WL-PR 7309','Ted and Margaret Kennedy','Hollyhill Dahlias',87.588,0,0,1,0),
+('dahl-0009.png','Kelsey Bramble','MCO-PR 9109','Colin Walker','Lobaugh''s Dahlias',88.613,89.183,0,0,1),
+('dahl-0010.png','Kelsey Neahkahnie','CO-DP 9005','Colin Walker','Lobaugh''s Dahlias',89.747,0,0,0,1),
+('dahl-0011.png','AC Great White','AA-SC-W 0201','Ken Greenway','Cowlitz River Dahlias',88.3,0,0,0,0),
+('dahl-0012.png','Allen''s Wild Rivers','A-ID-DP 1105','Allen Manuel','Cowlitz River Dahlias',87.45,0,0,0,0),
+('dahl-0013.png','Carmela Staas','A-ID-Pr 1109','Tony Evangelista','Cowlitz River Dahlias',86.275,0,0,0,0),
+('dahl-0014.png','Maks Arlow','A-SC-PK 1204','Allan Kaas','Lobaugh''s Dahlias',86.5,0,0,0,0),
+('dahl-0015.png','AC Edmonds','A-SC-DR 1207','Ken Greenway','Cowlitz River Dahlias',85.2,0,0,0,0),
+('dahl-0016.png','Clearview Leroux','A-SC-PR 1209','Richard Parshall','Cowlitz River Dahlias',86.5,86.417,0,0,0),
+('dahl-0017.png','Bloomquist Malloree','A-LC-DB Lv/W 1513','Paul Bloomquist','Triple Wren Farms',87.3,0,0,0,0),
+('dahl-0018.png','DGK','B-SC-W 2201','Don Kasanic','',0,85.333,0,0,0),
+('dahl-0019.png','Vixen''s Lolly','B-SC-OR 2203','A. Obina','',85.3,0,0,0,0),
+('dahl-0020.png','JS Pinky','B-SC-LB PK/Y 2210','Jerry Schoenauer','JS Dahlias',85.7,90.333,0,0,0),
+('dahl-0021.png','Narrows Dawn Banks','B-SC-LB Lv/W 2210','Ken and Marilyn Walton','',88.7,88.283,0,0,0),
+('dahl-0022.png','Sam-A V','B-Lc-R 2506','Don Kasinic','',87.0,0,0,0,0),
+('dahl-0023.png','Allen''s Moondancer','BB-FD-Y 3002','Allen Manuel','Cowlitz River Dahlias',85.333,0,0,0,0),
+('dahl-0024.png','KA''sGrandma Syb','BB-FD-DP 3005','Kristine Albrecht','Stone House Dahlias',85.85,0,0,0,0),
+('dahl-0025.png','River''s Cherry','BB-FD-R 3006','Eugene Kenyon','River''s Dahlias',86,0,0,0,0),
+('dahl-0026.png','Clearview Neta','BB-FD-L 3008','Richard Parshall','Lobaugh''s Dahlias',87.846,0,0,0,0),
+('dahl-0027.png','Bloomquist Wild','BB-ID-LB Br/Y 3110','Paul Bloomquist','Triple Wren Farms',87.6,0,0,0,0),
+('dahl-0028.png','Glencoe Lemon Drop','BB-SC-Y 3202','Art Chmura','',85.1,0,0,0,0),
+('dahl-0029.png','Agape Joy','BB-SC-DP 3205','Steve Lamband Debbie Pavich','',88,88.438,0,0,0),
+('dahl-0030.png','Windhaven Firecracker','BB-C-R 3306','Bob and Judy Romano','Crazy 4 Dahlias',89.417,0,0,0,0),
+('dahl-0031.png','River''s Uncle Ted','BB-IC-R 3406','Eugene Kenyon','River''s Dahlias',86.345,0,0,0,0),
+('dahl-0032.png','GG''s Mellow Yellow','BB-Lc-R 3502','Glenn Gitts','',86.4,86.833,0,0,0),
+('dahl-0033.png','Connie Marion','M-FD-W 4001','Connie Young-Davis','',91.5,87.333,0,0,0),
+('dahl-0034.png','Allen''s Sunlight','M-FD-Y 4002','Allen Manuel','Cowlitz River Dahlias',0,85,0,0,0),
+('dahl-0035.png','Kelton''s Original','M-FD-Y 4002','Kelton Zbarcha','',85.25,0,0,0,0),
+('dahl-0036.png','River''s Tangy Tart','M-FD-Or 4003','Eugene Kenyon','River''s Dahlias',86.8,0,0,0,0),
+('dahl-0037.png','Bloomquist Anew','M-FD-R 4006','Paul Bloomquist','Triple Wren Farms',85.09,0,0,0,0),
+('dahl-0038.png','River''s Little Vicki','M-FD-DR-4007','Eugene Kenyon','River''s Dahlias',87.63,0,0,0,0),
+('dahl-0039.png','River''s Penelope','M-FD-DR-4007','Eugene Kenyon','River''s Dahlias',86,0,0,0,0),
+('dahl-0040.png','Bloomquist Gordon','M-FD-Fl 4012','Paul Bloomquist','Triple Wren Farms',86.08,0,0,0,0),
+('dahl-0041.png','River''s Rosie','M-ID-DP 4105','Eugene Kenyon','River''s Dahlias',87.8,0,0,0,0),
+('dahl-0042.png','Hollyhill Ambiance','M-C-DP 4305','Ted and Margaret Kennedy','Hollyhill Dahlias',87.993,0,0,0,0),
+('dahl-0043.png','Irish Gnome','MC-FD-Y 5002','Steve and Sandy Boley','Birch Bay Dahlias',87.525,0,0,0,0),
+('dahl-0044.png','AC Kate','MB-V Y/R 6114','Ken Greenway','Cowlitz River Dahlias',86.13,0,0,0,0),
+('dahl-0045.png','Newaukum Streaker','MB-V W/DP 6114','Wayne Lobaugh','Lobaugh''s Dahlias',85.833,0,0,0,0),
+('dahl-0046.png','Skipley Reboot','ST-DR 7007','Richard Williams','Lobaugh''s Dahlias',86.845,0,0,0,0),
+('dahl-0047.png','Clearview Nieve','ST-PR 7009','Richard Parshall','Lobaugh''s Dahlias',86.774,85.178,0,0,0),
+('dahl-0048.png','River''s Lucille','ST-LB OR/Y 7010','Eugene Kenyon','River''s Dahlias',86.25,0,0,0,0),
+('dahl-0049.png','Sandia Nocturne','WL-PR 7309','Steve and Sandy Boley','Birch Bay Dahlias',86.66,0,0,0,0),
+('dahl-0050.png','Sandia Cancan','WL-VAR LV/PR 7314','Steve and Sandy Boley','Birch Bay Dahlias',87.664,0,0,0,0),
+('dahl-0051.png','RNX Boom Boom Lemon','NX-Y 7602','Eugene Kenyon','River''s Dahlias',85.6,0,0,0,0),
+('dahl-0052.png','Windyhill Cherry Bloom','CO-DP 9005','Carolyn Cutt','',88.5,0,0,0,0),
+('dahl-0053.png','GG''s Surprise','CO-R 9006','Glenn Gitts','',86.25,0,0,0,0),
+('dahl-0054.png','Raeann''s Red Rocket','CO-R 9006','Wayne Lobaugh','Lobaugh''s Dahlias',86.542,0,0,0,0),
+('dahl-0055.png','GG''s Starburst','O-FL 9212','Glenn Gitts','',85.935,0,0,0,0),
+('dahl-0056.png','SB''s Buttercream','OT-W 9401','Steve and Sandy Boley','Birch Bay Dahlias',87.276,0,0,0,0);
+
+
+DROP TABLE games;
+
+CREATE TABLE games (
+  id INTEGER PRIMARY KEY NOT NULL,
+  division TEXT,
+  team1 INTEGER,
+  team2 INTEGER,
+  winnerto INTEGER DEFAULT 0,
+  position INTEGER DEFAULT 0,
+  score1 INTEGER DEFAULT 0,
+  score2 INTEGER DEFAULT 0
+);
+
+INSERT INTO games (id, division, team1, team2, winnerto, position) VALUES
+    ( 1, "Northwest", 4, 5, 17, 1),
+    ( 2, "Southwest", 4, 5, 18, 1),
+    ( 3, "Northeast", 4, 5, 19, 1),
+    ( 4, "Southeast", 4, 5, 20, 1),
+    ( 5, "Northwest", 3, 6, 17, 2),
+    ( 6, "Southwest", 3, 6, 18, 2),
+    ( 7, "Northeast", 3, 6, 19, 2),
+    ( 8, "Southeast", 3, 6, 20, 2),
+    ( 9, "Northwest", 2, 7, 21, 1),
+    (10, "Southwest", 2, 7, 22, 1),
+    (11, "Northeast", 2, 7, 23, 1),
+    (12, "Southeast", 2, 7, 24, 1),
+    (13, "Northwest", 1, 8, 21, 2),
+    (14, "Southwest", 1, 8, 22, 2),
+    (15, "Northeast", 1, 8, 23, 2),
+    (16, "Southeast", 1, 8, 24, 2);
+INSERT INTO games (id, division, winnerto, position) VALUES
+    (17, "Northwest", 25, 1),
+    (18, "Southwest", 26, 1),
+    (19, "Northeast", 27, 1),
+    (20, "Southeast", 28, 1),
+    (21, "Northwest", 25, 2),
+    (22, "Southwest", 26, 2),
+    (23, "Northeast", 27, 2),
+    (24, "Southeast", 28, 2),
+
+    (25, "Northwest", 29, 1),
+    (26, "Southwest", 30, 1),
+    (27, "Northeast", 29, 2),
+    (28, "Southeast", 30, 2),
+
+    (29, "North",  31, 1),
+    (30, "South",  31, 2),
+
+    (31, "Final", 32, 1);

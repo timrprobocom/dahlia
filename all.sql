@@ -13,7 +13,8 @@ CREATE TABLE dahlias (
    hart boolean default 0,
    gulliksen boolean default 0,
    division text,
-   seed integer default 0
+   seed integer default 0,
+  `prose` text COLLATE utf8mb4_general_ci
 );
 
 INSERT INTO dahlias (
