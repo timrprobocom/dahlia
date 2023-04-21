@@ -9,7 +9,7 @@ if( $day > 0 )
     $today = getgame($day);
 
 $first = date("F j", $start);
-$final = date("F J", $start+31*86400);
+$final = date("F j", $start+30*86400);
 ?>
 <img class=right src="300/dahl-0000.png">
 <h3>Introduction</h3>
