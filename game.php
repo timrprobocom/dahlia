@@ -114,8 +114,10 @@ contenders in the <?=$game->division?>  Region.
 Number <?=$t1->seed?> seed <?=$t1->name?> goes up against contender
 number <?=$t2->seed?> seed <?=$t2->name?>.
 <p>
+<?=$t1->name?>:
 <?=$t1->prose?>
 <p>
+<?=$t2->name?>:
 <?=$t2->prose?>
 
 <p>You may click on the bloom image to see a larger picture of the flower.
