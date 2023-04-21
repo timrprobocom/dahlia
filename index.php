@@ -7,6 +7,9 @@ if( $day > 1 )
     $last = getgame($day-1);
 if( $day > 0 )
     $today = getgame($day);
+
+$first = date("F j", $start);
+$final = date("F J", $start+31*86400);
 ?>
 <img class=right src="300/dahl-0000.png">
 <h3>Introduction</h3>
@@ -16,10 +19,10 @@ If the NCAA can have March Madness, then the Portland Dahlia Society can have
 a "Dahlia Duke-Out".  This is a contest run strictly for fun to decide a
 "People's Choice" winner from the 32 entries with the highest test garden scores
 in the 2023 New Introductions
-list.  Starting April 18 , two entries from the list will be pitted against each
+list.  Starting <?=$first?>, two entries from the list will be pitted against each
 other.  You, the people, will vote on which one you like.  The winners of the
 first round will then be pitted against each other, until we run through the
-Elite Eight, the Final Four, and the Championship round on May 20.
+Elite Eight, the Final Four, and the Championship round on <?=$final?>.
 <p>
 The winner will be presented with a prestigious but meaningless "People's
 Choice" trophy.
