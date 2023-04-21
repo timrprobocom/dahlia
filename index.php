@@ -24,7 +24,7 @@ other.  You, the people, will vote on which one you like.  The winners of the
 first round will then be pitted against each other, until we run through the
 Elite Eight, the Final Four, and the Championship round on <?=$final?>.
 <p>
-The winner will be presented with a prestigious but meaningless "People's
+The winner will be presented with a prestigious but meaningless virtual "People's
 Choice" trophy.
 
 <p>
