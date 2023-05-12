@@ -19,9 +19,9 @@ for line in open('DukeOut_prose_23.txt',encoding='cp1252'):
     if not line:
         if accum:
             txt = ' '.join(accum)
-            sql = "UPDATE dahlias SET prose=? WHERE oid=?;"
+            sql = "UPDATE dahlias SET prose=%s WHERE oid=%s;"
             print( oid, name, txt )
-#            cur.execute( sql, (txt, oid) )
+            cur.execute( sql, (txt, oid) )
         oid = 0
         name = ''
         accum = []
@@ -32,4 +32,6 @@ for line in open('DukeOut_prose_23.txt',encoding='cp1252'):
         oid = lookup[name]
     else:
         accum.append( line )
+
+db.commit()
 

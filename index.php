@@ -108,6 +108,9 @@ don't pit number 1 against number 2 right away.  Instead, their first
 round matches the number 1 seed with the number 8 seed,  number 2 plays 
 number 7, number 3 plays number 6, and number 4 plays number 5.  We have
 adopted the same system here.
+<p>
+In case of a tie, the entry with the better (lower) seed will be deemed
+the winner.
 
 <h3>Photo Credits</h3>
 <img class=left src="150/dahl-logo.png">
