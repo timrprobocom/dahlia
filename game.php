@@ -9,6 +9,7 @@ $t1 =  $db->query("SELECT * FROM dahlias WHERE oid = $game->team1;");
 $t1 = $t1->fetch_object();
 $t2 =  $db->query("SELECT * FROM dahlias WHERE oid = $game->team2;");
 $t2 = $t2->fetch_object();
+$err = "";
 
 $adjectives = [
      "an epic",
