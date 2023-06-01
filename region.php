@@ -85,7 +85,7 @@ if( !$seeds )
         dummy();
 
     echo "</td><td class='four'>\n";
-    if( ($game->score1 == 0) || ($day == $game->id)  || ($day == 31 && $region == 'final4'))
+    if( ($game->score1 == 0) || ($day <= $game->id)  || ($day == 31 && $region == 'final4'))
         dummy();
     else if( $game->score1 >= $game->score2 )
         display( $teams[$game->team1] );

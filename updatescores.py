@@ -28,6 +28,8 @@ for i in range(day):
     updates.append( (rows[i]['winnerto'], rows[i]['position'], rows[i][win]) )
 
 for w,p,t in updates:
+    if w == 32:
+        continue
     posn = f"team{p}"
     if rows[w-1][posn] != t:
         print(f"UPDATE games SET {posn}={t} WHERE id={w};")
