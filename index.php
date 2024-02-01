@@ -11,14 +11,14 @@ if( $day > 0 )
 $first = date("F j", $start);
 $final = date("F j", $start+30*86400);
 ?>
-<img class=right src="300/dahl-0000.png">
+<img class=right src="300/dahl-001.png">
 <h3>Introduction</h3>
 
 <p>
 If the NCAA can have March Madness, then the Portland Dahlia Society can have
 a "Dahlia Duke-Out".  This is a contest run strictly for fun to decide a
 "People's Choice" winner from the 32 entries with the highest test garden scores
-in the 2023 New Introductions
+in the 2024 New Introductions
 list.  Starting <?=$first?>, two entries from the list will be pitted against each
 other.  You, the people, will vote on which one you like.  The winners of the
 first round will then be pitted against each other, until we run through the
@@ -88,8 +88,8 @@ and their seeds, click these:
 <p>
 If you're curious about how we set this up, here is a summary.
 <p>
-We started with the 57 entries in the Americal Dalia Society's 2023 New 
-Introductions list.  57 turns out 56 is not a convenient number for a
+We started with the 47 entries in the Americal Dalia Society's 2023 New 
+Introductions list.  It turns out 47 is not a convenient number for a
 bracket scheme, without having some "wild card" games.  In addition, we
 didn't want this nonsense to last more than a month.  If you have N teams in
 a single-elimination tournament, you need to have N-1 games to decide a winner.
@@ -119,27 +119,10 @@ announcement.  The photos are thanks to:
 <p>
 <table width=50% style="margin-left:100px"><tr>
 <td valign=top width=40%>
-Kristine Albrecht<br>
-Teresa Bergman<br>
-Paul Bloomquist<br>
-Steve and Sandy Boley<br>
-Tony Evangelista<br>
-Don Kasinic<br>
-Eugene Kenyan<br>
-Wayne Lobaugh<br>
-Allen Manuel<br>
-Paul McKittrick<br>
-</td><td valign=top>
-Mike Parrish<br>
-Dick Parshall<br>
 Mike and Heather Ramsay<br>
-Jerry Schoenauer<br>
 Bob Schroeder<br>
 Linda Taylor</br>
-Cammi Waggoner<br>
-Colin Walker<br>
-Iris Wallace<br>
-Marilyn Walton<br>
+Heidi Zierdt<br>
 </td></tr></table>
 <br><br>
 

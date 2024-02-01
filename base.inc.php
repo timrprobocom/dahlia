@@ -1,7 +1,7 @@
 <?php
 $db = new mysqli('db.timr.probo.com','timrprobocom','web7cal','dahlias');
-$title = "Dahlia Duke-out";
-$start = mktime(6,0,0,5,1,2023);
+$title = "2024 Dahlia Duke-out";
+$start = mktime(6,0,0,5,1,2024);
 $today = time();
 if( $today < $start )
     $day = 0;
