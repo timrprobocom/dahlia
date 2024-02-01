@@ -4,7 +4,7 @@ db = mysql.connect(host='db.timr.probo.com', user='timrprobocom', passwd='web7ca
 cur = db.cursor()
 regions = ["Northwest","Southwest","Northeast","Southeast"]
 
-cur.execute('SELECT oid FROM dahlias ORDER BY tgscore DESC;')
+cur.execute('SELECT oid FROM dahlias ORDER BY GREATEST(tgscore,benchscore) DESC;')
 
 def seed():
     for x in range(8):

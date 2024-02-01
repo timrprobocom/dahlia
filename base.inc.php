@@ -36,11 +36,12 @@ function display($row, $score=0, $vote=0)
 STOP;
     if( $score )
         echo "<span class=name style='float: right'>$score</span>";
+    $bscore = max($row->tgscore,$row->benchscore);
     echo <<<STOP
     <br>
     Description: $row->pedigree</br>
     Orignator: $row->originator</br>
-    Score: $row->tgscore<br>
+    Score: $bscore<br>
 STOP;
     $awards = [];
     if( $row->dudley )
