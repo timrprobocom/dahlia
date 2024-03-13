@@ -24,9 +24,7 @@ other.  You, the people, will vote on which one you like.  The winners of the
 first round will then be pitted against each other, until we run through the
 Elite Eight, the Final Four, and the Championship round on <?=$final?>.
 <p>
-The winner will be presented with a prestigious but meaningless virtual "People's
-Choice" trophy.
-
+The winner will be presented with the warm thoughts and admiration of the community.
 <p>
 Voting runs from 6 AM until 2 AM.  In order to vote, you must register
 and get a username.  We do that to restrict the voting to one vote 
