@@ -29,7 +29,8 @@ END;
 while( $row = $qry->fetch_object() )
 {
     $to = "$row->name <$row->email>";
-    $m1 = str_replace( "XXXXX", $row->username, $message );
+    $user = str_replace( " ", "%20", $row->username );
+    $m1 = str_replace( "XXXXX", $user, $message );
     mail( $to, $subject, $m1, $headers );
 }
 ?>
