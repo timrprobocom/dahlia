@@ -2,7 +2,7 @@
 require_once('base.inc.php');
 
 $special = '';
-if( $day > 31 )
+if( $day == 0 || $day > 31 )
     exit;
 else if( $day == 25 )
     $special = "Today starts the Elite Eight round -- we're getting closer to the finish!\n";
