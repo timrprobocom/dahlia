@@ -44,8 +44,17 @@ To register your chosen username, which is the "ticket" to being able to vote, p
 <p>
 In yesterday's <?=$round ?> battle,
 #<?=$last->winner->seed?> seed <b><?=$last->winner->name?></b> defeated
-#<?=$last->loser->seed?> seed <b><?=$last->loser->name?></b> by a score of 
-<?=$last->wscore?> to <?=$last->lscore?>.  
+#<?=$last->loser->seed?> seed <b><?=$last->loser->name?></b> 
+<?php
+if( $last->wscore != $last->lscore )
+{
+    echo "by a score of $last->wscore to $last->lscore.";
+}
+else
+{
+    echo "by winning the tie breaker after a {$last->wscore}-{$last->lscore} tie.";
+}
+?>
 <?php if( $day != 31 ) { ?>
 <b><?=$last->winner->name?></b> will be advancing to the next round.
 <?php 
