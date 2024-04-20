@@ -16,16 +16,25 @@ cur = db.cursor(dictionary=True)
 
 # Update all the scores so far.
 
-cur.execute("SELECT * FROM games ORDER BY id;")
+sql = """\
+SELECT g.*, d1.seed AS seed1, d2.seed AS seed2
+FROM games g
+  LEFT JOIN dahlias d1 ON g.team1=d1.oid
+  LEFT JOIN dahlias d2 on g.team2=d2.oid
+ORDER BY g.id;"""
+
+cur.execute(sql)
 rows = list(cur)
 
 updates = []
 for i in range(day):
-    if rows[i]['score1'] >= rows[i]['score2']:
+    row = rows[i]
+    if (row['score1'] > row['score2']) or \
+       (row['score1'] == row['score2'] and row['seed1'] <= row['seed2']):
         win = 'team1'
     else:
         win = 'team2'
-    updates.append( (rows[i]['winnerto'], rows[i]['position'], rows[i][win]) )
+    updates.append( (row['winnerto'], row['position'], row[win]) )
 
 for w,p,t in updates:
     if w == 32:

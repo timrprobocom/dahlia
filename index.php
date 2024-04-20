@@ -56,7 +56,7 @@ else
 }
 ?>
 <?php if( $day != 31 ) { ?>
-<b><?=$last->winner->name?></b> will be advancing to the next round.
+<b>  <?=$last->winner->name?></b> will be advancing to the next round.
 <?php 
     } 
 } ?>
