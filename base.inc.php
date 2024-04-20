@@ -102,7 +102,8 @@ function getgame($day)
     $t1 = $t1->fetch_object();
     $t2 =  $db->query("SELECT * FROM dahlias WHERE oid = $game->team2;");
     $t2 = $t2->fetch_object();
-    if( $game->score1 >= $game->score2 )
+    if( ($game->score1 > $game->score2) || 
+        (($game->score1 == $game->score2) && ($t1->seed <= $t2->seed) ) )
     {
         $info->winner = $t1;
         $info->loser = $t2;
