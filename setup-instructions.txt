@@ -1,0 +1,8 @@
+Start with the PDF file.  Rename it Dahlias2025.pdf for the current year.
+Run text-to-sql.py to make sure it looks normal.  They aren't consistent.
+Do "python text-to-sql.py | mysql dahlias"
+Do "mysql dahlias < reset.sql"
+Do "python seed.py"
+
+Update base.inc.php to include the current year.
+

@@ -2,11 +2,13 @@
 
 fnin = f"Dahlias2025.txt"
 
-print("DROP TABLE dahlias;")
+print("DROP TABLE IF EXISTS dahlias;")
 
 print("""\
  CREATE TABLE dahlias (
-   name text, pedigree text,
+   oid integer primary key not null auto_increment,
+   name text, 
+   pedigree text,
    image text,
    originator text,
    distributor text,
@@ -16,7 +18,8 @@ print("""\
    hart boolean default 0,
    gulliksen boolean default 0,
    division text,
-   seed integer default 0
+   seed integer default 0,
+   prose text COLLATE utf8mb4_general_ci
 );
 """)
 
