@@ -17,7 +17,7 @@ mkdir -p 75
 for i in *.png; do
     echo $i
     convert $i -resize 300x 300/$i
-    convert $i -resize 150x 300/$i
-    convert $i -resize 75x 300/$i
+    convert $i -resize 150x 150/$i
+    convert $i -resize  75x  75/$i
 done
 cd ..

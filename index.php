@@ -126,10 +126,35 @@ announcement.  The photos are thanks to:
 <p>
 <table width=50% style="margin-left:100px"><tr>
 <td valign=top width=40%>
-Mike and Heather Ramsay<br>
-Bob Schroeder<br>
-Linda Taylor</br>
-Heidi Zierdt<br>
+Eric Anderson<br>
+Alan Arrington<br>
+Teresa Bergman<br>
+Thomas Bloomquist<br>
+Steve &amp; Sandy Boley<br>
+Robert Eagle<br>
+Jan Gawthrop<br>
+Glenn Gitts
+</td>
+<td valign=top width=40%>
+Ted Kennedy<br>
+Peter Kruger<br>
+Brittiny Lepage<br>
+Wayne Lobaugh<br>
+Michelle McDowell<br>
+Steve Meggos<br>
+April Morley<br>
+Tammy Opalka<br>
+Lou Paradise
+</td>
+<td valign=top width=40%>
+Heather Ramsay<br>
+Jerry Schoenauer<br>
+Theresa Schroeder<br>
+Diana Shandro<br>
+Laia Solen<br>
+Cammi Waggoner<br>
+Colin Walker<br>
+Connie Young-Davis
 </td></tr></table>
 <br><br>
 
