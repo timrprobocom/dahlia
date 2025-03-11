@@ -9,7 +9,7 @@ else if( $day == 25 )
 else if( $day == 29 )
     $special = "We've now entered the Final Four.  There's a menu item on the main page to see the Final Four brackets.\n";
 else if( $day == 31 )
-    $special = "This is it -- the big championship matchup!\n";
+    $special = "This is it -- the big championship matchup!  Which bloom will take it all?\n";
 
 $qry = $db->query("SELECT * FROM users;" );
 $subject = "Dahlia Duke-Out Reminder";

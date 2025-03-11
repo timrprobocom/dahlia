@@ -18,8 +18,8 @@ $final = date("F j", $start+30*86400);
 If the NCAA can have March Madness, then the Portland Dahlia Society can have
 a "Dahlia Duke-Out".  This is a contest run strictly for fun to decide a
 "People's Choice" winner from the 32 entries with the highest test garden scores
-in the 2024 New Introductions
-list.  Starting <?=$first?>, two entries from the list will be pitted against each
+in the "Best of 2024" list.
+Starting <?=$first?>, two entries from the list will be pitted against each
 other.  You, the people, will vote on which one you like.  The winners of the
 first round will then be pitted against each other, until we run through the
 Elite Eight, the Final Four, and the Championship round on <?=$final?>.
@@ -95,17 +95,17 @@ and their seeds, click these:
 <p>
 If you're curious about how we set this up, here is a summary.
 <p>
-We started with the 47 entries in the Americal Dalia Society's 2023 New 
-Introductions list.  It turns out 47 is not a convenient number for a
+We started with the 75 entries in the Americal Dalia Society's "Best of
+2024" list.  It turns out 75 is not a convenient number for a
 bracket scheme, without having some "wild card" games.  In addition, we
 didn't want this nonsense to last more than a month.  If you have N teams in
 a single-elimination tournament, you need to have N-1 games to decide a winner.
 That meant 64 was too many (two months), so we settled on 32.
 <p>
-So, we sorted the ADS new introductions list by their Trial Garden Score. 
-We took the top 32 entries, and those are the "teams" in our tournament.
-To make it a little like March Madness, we divided the set up into four
-"regions".  The top four entries by score became the number 1 seeds in 
+So, we sorted the ADS "besr of" list by their Trial Garden and Seedling
+Bench Scores.  We took the top 32 entries, and those are the "teams" in our 
+tournament.  To make it a little like March Madness, we divided the set up into 
+four "regions".  The top four entries by score became the number 1 seeds in 
 the four regions.  The next four entries by score became the number 2 seeds,
 and so on.
 <p>
@@ -124,7 +124,7 @@ the winner.
 The photos used on this web site came from the ADS New Introductions
 announcement.  The photos are thanks to:
 <p>
-<table width=50% style="margin-left:100px"><tr>
+<table style="margin-left:100px"><tr>
 <td valign=top width=40%>
 Eric Anderson<br>
 Alan Arrington<br>
