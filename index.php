@@ -102,7 +102,7 @@ didn't want this nonsense to last more than a month.  If you have N teams in
 a single-elimination tournament, you need to have N-1 games to decide a winner.
 That meant 64 was too many (two months), so we settled on 32.
 <p>
-So, we sorted the ADS "besr of" list by their Trial Garden and Seedling
+So, we sorted the ADS "best of" list by their Trial Garden and Seedling
 Bench Scores.  We took the top 32 entries, and those are the "teams" in our 
 tournament.  To make it a little like March Madness, we divided the set up into 
 four "regions".  The top four entries by score became the number 1 seeds in 
