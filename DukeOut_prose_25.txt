@@ -60,7 +60,7 @@ Darling Harvest Moon
     It boasts a very high test score <br>
     Darling Harvest Moon <br>
     Makes me want to swoon <br>
-    When can I buy one or more? <br>
+    When can I buy one or more?
 
 
 Dori T
@@ -68,7 +68,8 @@ Dori T
     this dahlia in beauty. Calmness and serenity seem to swarm around "Dori T"
     as she fills her space with quiet dignity. There’s no need to be flashy 
     or gaudy when you have such classical elegance as your calling card. a
-    dahlia this classy <br>
+    dahlia this classy 
+    <p class="indent">
         Crimson folds precise,      <br>
         Velvet whispers in the sun... <br>
         Grace in full command.
@@ -95,7 +96,8 @@ RaeAnn’s Orion
 
 Lo-Olof
     If you want simple but striking purple, this mignon single packs a lot of punch 
-    in a small package. <br>
+    in a small package.
+    <p class="indent">
         A dahlia so dainty and bright,  <br>
         With petals of purplish light,  <br>
         She sways in the breeze,  <br>
@@ -104,6 +106,7 @@ Lo-Olof
 
 
 Hollyhill Minuet
+    <p class="indent">
     In evening’s glow, so soft, so bright,  <br>
     A Minuet dahlia sways in light. <br>
     With petals sheathed in vibrant hue,    <br>
@@ -119,6 +122,7 @@ Hollyhill Minuet
 
 
 Hollyhill Sincerely
+    <p class="indent">
     In morning hush, where dew drops cling,  <br>
     She rises soft... a whispered spring.  <br>
     With petals brushed in blushing hue,  <br>
@@ -132,16 +136,18 @@ Hollyhill Sincerely
 
 
 Newaukum Button
+    <p class="indent">
     Nestled bright in morning’s gleam  <br>
     A dahlia blooms - a painter’s dream.  <br>
     Petals small, yet rich with hue,  <br>
     A Button spun from crimson dew.  <br>
     <br>
     A tiny burst, a quiet spark,  <br>
-    A jewel in nature’s meadowed arc.  <br>
+    A jewel in nature’s meadowed arc.
 
 
 PGK Janet
+    <p class="indent">
     Morning dew upon her face       <br>
     Lends a glow of soft embrace    <br>
     Crimson petals and rosy hue     <br>
@@ -154,6 +160,7 @@ PGK Janet
 
 
 Darling Little Boo
+    <p class="indent">
     Oh, darling little Boo so bright,       <br>
     A dance of purple, brushed with white.  <br>
     Petals soft as whispered dreams,        <br>
@@ -177,8 +184,7 @@ PM Marsha
     Alan Arrington introduces this ball dahlia with such a pleasing blend
     of purple and lavender that you’ll be adding this blend to your own
     wardrobe.  Note how each petal of PM Marsha rolls obediently to achieve
-    a hybridizer’s
-    dream ball form.
+    a hybridizer’s dream ball form.
 
 GG’s Red Eye
     Deep, dark red.  You wanted it.  Now you’ve got it.  GG’s Red Eye from

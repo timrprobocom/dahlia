@@ -70,6 +70,10 @@ td.four table.bulb {
     margin-top: 480px;
 }
 
+p.indent {
+    margin-left: 4ex;
+}
+
 .left {
     float: left;
 }
