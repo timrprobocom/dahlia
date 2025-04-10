@@ -4,7 +4,7 @@ import mysql.connector as mysql
 db = mysql.connect(host='db.timr.probo.com', user='timrprobocom', passwd='web7cal', db='dahlias')
 cur = db.cursor()
 
-file = 'DukeOut_prose_24.txt'
+file = 'DukeOut_prose_25.txt'
 if len(sys.argv) > 1:
     file = sys.argv[-1]
 
