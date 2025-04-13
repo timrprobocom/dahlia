@@ -11,7 +11,8 @@ if( $day > 0 )
 $first = date("F j", $start);
 $final = date("F j", $start+30*86400);
 ?>
-<img class=right src="300/dahl-001.png">
+<!_- img class=right src="300/dahl-001.png" -->
+<img class=right src="dahl-jrp.png">
 <h3>Introduction</h3>
 
 <p>
@@ -127,7 +128,7 @@ generously provided by:
 <td valign=top width=40%>
 Laura Oldenkamp<br>
 Ellen Rogers<br>
-Jodan Garman<br>
+Jordan Garman<br>
 Bonnie Providenza<br>
 John Providenza
 </td></tr></table>

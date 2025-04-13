@@ -56,6 +56,11 @@ Your email would probably make a good username, since you can remember
 it easily.
 
 <p>
+Please remember to check your spam folders for the reminder messages.
+The messages come with my email address, which is probably unknown to
+your email reader.
+
+<p>
 <span style='color: red'><?=$err?></span>
 <form method=POST action=/dahlia/register.php>
 <table>
