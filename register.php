@@ -31,9 +31,15 @@ if( array_key_exists('button',$_REQUEST) )
         "Content-Type: text/plain\r\n";
 
     $message = <<<END
+<p>
 Thanks for registering for the Dahlia Duke-Out!  Your sign-up is complete, with username "$_REQUEST[username]".
 
 You may vote every day starting at 6:00 AM.
+
+<p>
+Please remember to check your spam folders for the reminder messages.
+The messages come with the organizer&apo;s email address, which is probably unknown to
+your email reader.
 END;
 
     $to = "$_REQUEST[name] <$_REQUEST[email]>";
@@ -54,11 +60,6 @@ username can be whatever you want, as long as it is not already taken.
 We also need your email address, so we can notify you of any issues. 
 Your email would probably make a good username, since you can remember
 it easily.
-
-<p>
-Please remember to check your spam folders for the reminder messages.
-The messages come with my email address, which is probably unknown to
-your email reader.
 
 <p>
 <span style='color: red'><?=$err?></span>
