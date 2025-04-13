@@ -119,6 +119,19 @@ adopted the same system here.
 In case of a tie, the entry with the better (lower) seed will be deemed
 the winner.
 
+<h3>Prose Credits</h3>
+The "flowery" descriptions of each bloom used on the games pages were 
+generously provided by:
+<p>
+<table style="margin-left:100px"><tr>
+<td valign=top width=40%>
+Laura Oldenkamp<br>
+Ellen Rogers<br>
+Jodan Garman<br>
+Bonnie Providenza<br>
+John Providenza
+</td></tr></table>
+
 <h3>Photo Credits</h3>
 <img class=left src="150/dahl-logo.png">
 The photos used on this web site came from the ADS New Introductions
