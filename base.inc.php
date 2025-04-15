@@ -2,6 +2,7 @@
 $db = new mysqli('db.timr.probo.com','timrprobocom','web7cal','dahlias');
 $title = "2025 Dahlia Duke-out";
 $start = mktime(6,0,0,4,15,2025);
+// Also update updatescores.py...
 $today = time();
 if( $today < $start )
     $day = 0;
