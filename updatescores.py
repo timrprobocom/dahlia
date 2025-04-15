@@ -4,7 +4,7 @@ import mysql.connector as mysql
 import time
 import datetime
 
-start = datetime.datetime( 2024, 4, 1, 6, 0, 0 )
+start = datetime.datetime( 2025, 4, 15, 6, 0, 0 )
 today = datetime.datetime.today()
 delta = today - start
 day = delta.days
