@@ -107,6 +107,28 @@ window.addEventListener('keydown',function(e){
 },true);
 </script>
 
+<?php if( $day > 1 && $day <= 31 ) { ?>
+<h3>Yesterday</h3>
+<p>
+In yesterday's <?=$round ?> battle,
+#<?=$last->winner->seed?> seed <b><?=$last->winner->name?></b> defeated
+#<?=$last->loser->seed?> seed <b><?=$last->loser->name?></b> 
+<?php
+if( $last->wscore != $last->lscore )
+{
+    echo "by a score of $last->wscore to $last->lscore.";
+}
+else
+{
+    echo "by winning the tie breaker after a {$last->wscore}-{$last->lscore} tie.";
+}
+?>
+<?php if( $day != 31 ) { ?>
+<b>  <?=$last->winner->name?></b> will be advancing to the next round.
+<?php 
+    } 
+} ?>
+
 <h2>Competition Day <?=$day?></h2>
 <p>Today's <?=$round?> matchup finds us with <?=$adjective?> battle between two
 contenders in the <?=$game->division?>  Region.
@@ -140,5 +162,9 @@ Choose your favorite below by clicking the "Vote" button for your choice.
 </td>
 </tr></table>
 </form>
+
+<h2>Back to Main Page</h2>
+<p>If you'd like to go back to the main page, to view the other brackets for example,
+just <a href="/">click here</a>.
 
 <?php include('footer.inc.php'); ?>

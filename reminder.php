@@ -24,6 +24,8 @@ and it promises to be another exciting battle.
 $special
 Go to http://timr.4roberts.us/dahlia/game.php?un=XXXXX to vote on
 today's contest.
+
+If you wish to stop receiving these emails, please drop a note to timr@probo.com.
 END;
 
 while( $row = $qry->fetch_object() )
