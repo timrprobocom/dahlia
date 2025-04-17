@@ -158,6 +158,12 @@ Enter your username here:
 <p>
 Choose your favorite below by clicking the "Vote" button for your choice.
 
+<br>
+<table>
+<td width=40%>
+<?php display($t1,0,1); ?>
+</td>
+<td width=20% align=center valign=middle><h2>vs</h2></td>
 <td width=40%>
 <?php display($t2,0,1); ?>
 </td>
