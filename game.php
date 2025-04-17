@@ -11,6 +11,11 @@ $t2 =  $db->query("SELECT * FROM dahlias WHERE oid = $game->team2;");
 $t2 = $t2->fetch_object();
 $err = "";
 
+if( $day > 1 )
+    $last = getgame($day-1);
+if( $day > 0 )
+    $today = getgame($day);
+
 $adjectives = [
      "an epic",
      "an exciting",
@@ -21,6 +26,7 @@ $adjectives = [
      "a classic",
      "a spirited",
      "a high-stakes",
+     "an all-out, wall-to-wall",
 ];
 
 $adjective = $adjectives[array_rand($adjectives)];
@@ -108,7 +114,7 @@ window.addEventListener('keydown',function(e){
 </script>
 
 <?php if( $day > 1 && $day <= 31 ) { ?>
-<h3>Yesterday</h3>
+<h2>Yesterday</h2>
 <p>
 In yesterday's <?=$round ?> battle,
 #<?=$last->winner->seed?> seed <b><?=$last->winner->name?></b> defeated
@@ -143,7 +149,6 @@ number <?=$t2->seed?> seed <?=$t2->name?>.
 <?=$t2->name?>:
 <?=$t2->prose?>
 
-<p>You may click on the bloom image to see a larger picture of the flower.
 <p>
 Enter your username here:
 <form method=POST action="/dahlia/game.php">
@@ -152,11 +157,7 @@ Enter your username here:
 <span style='color: red'><?=$err?></span>
 <p>
 Choose your favorite below by clicking the "Vote" button for your choice.
-<br><br><br>
-<table><tr><td width=40%>
-<?php display($t1,0,1); ?>
-</td>
-<td width=20% align=center valign=middle><h2>vs</h2></td>
+
 <td width=40%>
 <?php display($t2,0,1); ?>
 </td>
@@ -164,7 +165,7 @@ Choose your favorite below by clicking the "Vote" button for your choice.
 </form>
 
 <h2>Back to Main Page</h2>
-<p>If you'd like to go back to the main page, to view the other brackets for example,
+<p>If you'd like to go back to the main page or review the other brackets,
 just <a href="/">click here</a>.
 
 <?php include('footer.inc.php'); ?>
