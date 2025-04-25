@@ -27,6 +27,15 @@ else
     while( $row = $rows->fetch_object() )
         $teams[] = $row;
 }
+
+function scores( $game )
+{
+    global $day;
+    if( $game->id == $day )
+        return [ -1, -1 ];
+    else
+        return [ $game->score1, $game->score2 ];
+}
 ?>
 <ul>
 <?php foreach( $regions as $rgn ) { ?>
@@ -52,21 +61,23 @@ if( !$seeds )
         for( $i = 0; $i < 4; $i++ )
         {
             $game = $rows->fetch_object();
-            display( $teams[$game->team1], $game->score1 );
-            display( $teams[$game->team2], $game->score2 );
+            $scores = scores($game);
+            display( $teams[$game->team1], $scores[0] );
+            display( $teams[$game->team2], $scores[1] );
         }
     }
     echo "</td><td class='two'>\n";
     for( $i = 0; $i < 2; $i++ )
     {
         $game = $rows->fetch_object();
+        $scores = scores($game);
         if( $game->team1 > 0 )
-            display( $teams[$game->team1], $game->score1 );
+            display( $teams[$game->team1], $scores[0] );
         else
             dummy();
         echo "&nbsp;";
         if( $game->team2 > 0 )
-            display( $teams[$game->team2], $game->score2 );
+            display( $teams[$game->team2], $scores[1] );
         else
             dummy();
         echo "&nbsp;";
@@ -74,13 +85,14 @@ if( !$seeds )
 
     echo "</td><td class='three'>\n";
     $game = $rows->fetch_object();
+    $scores = scores($game);
     if( $game->team1 > 0 )
-        display( $teams[$game->team1], $game->score1 );
+        display( $teams[$game->team1], $scores[0] );
     else
         dummy();
-        echo "&nbsp;";
+    echo "&nbsp;";
     if( $game->team2 > 0 )
-        display( $teams[$game->team2], $game->score2 );
+        display( $teams[$game->team2], $scores[1] );
     else
         dummy();
 

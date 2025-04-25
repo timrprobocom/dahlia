@@ -35,7 +35,9 @@ function display($row, $score=0, $vote=0)
     <td>
        <span class=name>$row->seed. $row->name</span>
 STOP;
-    if( $score )
+    if( $score == -1 )
+        echo "<span class=name style='float: right'>??</span>";
+    else if( $score )
         echo "<span class=name style='float: right'>$score</span>";
     $bscore = max($row->tgscore,$row->benchscore);
     echo <<<STOP

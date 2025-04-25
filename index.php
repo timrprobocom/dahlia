@@ -11,7 +11,7 @@ if( $day > 0 )
 $first = date("F j", $start);
 $final = date("F j", $start+30*86400);
 ?>
-<!_- img class=right src="300/dahl-001.png" -->
+<!-- img class=right src="300/dahl-001.png" -->
 <img class=right src="dahl-jrp.png">
 <h3>Introduction</h3>
 
