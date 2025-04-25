@@ -172,6 +172,6 @@ Choose your favorite below by clicking the "Vote" button for your choice.
 
 <h2>Back to Main Page</h2>
 <p>If you'd like to go back to the main page or review the other brackets,
-just <a href="/">click here</a>.
+just <a href="/dahlia">click here</a>.
 
 <?php include('footer.inc.php'); ?>
