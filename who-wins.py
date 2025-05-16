@@ -35,4 +35,4 @@ for u in cursor.fetchall():
 
 data.sort(reverse=True)
 for row in data:
-    print( "%-22s %3d-%3d" % (row[3],row[0],row[1]) )
+    print( "%-22s %3d-%3d  of %3d" % (row[3],row[0],row[1],row[0]+row[1]) )

@@ -10,7 +10,7 @@ import datetime
 import pytz
 
 # Usage:
-#   ./intromail.py -t xxx.tmpl -n names [-b batch-size] 
+#   ./intromail.py -t xxx.tmpl -n names
 
 
 DEBUG = False
@@ -28,17 +28,18 @@ def sendit( tmpl, smtp, row ):
         print(msg)
         print("------")
     else:
-        recips = [row, FROM]
+#        recips = [row, FROM]
+        recips = [row]
 #        smtp.set_debuglevel( 1 )
         smtp.sendmail( FROM, recips, msg )
 
 # Process arguments.
 
-parser = argparse.ArgumentParser( prog='secmail.py' )
+parser = argparse.ArgumentParser( prog='intromail.py' )
 parser.add_argument( '-d', '--debug', action='store_true', 
                         help='Enable debug mode')
-parser.add_argument( '-b', '--batch', type=int, default=50,
-                        help='List of email addresses')
+parser.add_argument( '-g', '--smtp2go', action='store_true', 
+                        help='Use smtp2go instead of probo')
 parser.add_argument( '-n', '--names', required=True,
                         help='List of email addresses')
 parser.add_argument( '-t', '--template', required=True,
@@ -50,7 +51,7 @@ args = parser.parse_args()
 
 DEBUG = args.debug
 text = open(args.template).read()
-args.john = 'John' in text
+args.john = 'partner' in text
 
 # This could be a mail.rfc822 object...
 
@@ -72,10 +73,16 @@ if args.john:
 if DEBUG:
     smtp = None
 else:
-    smtp = smtplib.SMTP('mail.smtp2go.com', 587)
+    if args.smtp2go:
+        smtp = smtplib.SMTP('mail.smtp2go.com', 587)
+    else:
+        smtp = smtplib.SMTP('mail.probo.com',587)
     smtp.set_debuglevel(DEBUG)
     smtp.starttls()
-    smtp.login( 'probo.com', 'pr0b0$c0m' )
+    if args.smtp2go:
+        smtp.login( 'probo.com', 'pr0b0$c0m' )
+    else:
+        smtp.login( 'relay', 'S3ndM@1l' )
 
 for row in open(args.names).readlines():
     row = row.strip()

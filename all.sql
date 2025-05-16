@@ -247,5 +247,5 @@ CREATE TABLE users (
    username varchar(40),
    name text,
    email text,
-   votes char(32) default '--------------------------------'
+   votes char(32) default '-------------------------------'
 );
